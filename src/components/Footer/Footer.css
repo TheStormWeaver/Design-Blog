@@ -1,0 +1,10 @@
+.site-footer {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(90deg, rgba(12,34,83,1) 0%, rgba(73,70,130,1) 50%, rgba(5,9,44,1) 100%);
+  margin-top:auto; 
+}
+
+.footer-copyright {
+  font-size: 30px;
+}

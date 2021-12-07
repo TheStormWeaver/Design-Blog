@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.navbar-list {
+  padding-left: 0px;
+  display: flex;
+}
+
+.navbar-list-item {
+  list-style: none;
+  padding: 0 28px;
+  font-size: 20px;
+}
+
+.navbar-list-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-logo {
+  width: 50%;
+}
+
+.navbar-logo img {
+  width: 28%;
+}
