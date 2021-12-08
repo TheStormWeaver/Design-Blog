@@ -3,8 +3,62 @@
   padding: 10px;
   background: linear-gradient(90deg, rgba(12,34,83,1) 0%, rgba(73,70,130,1) 50%, rgba(5,9,44,1) 100%);
   margin-top:auto; 
+  color: white;
 }
 
-.footer-copyright {
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.footer-main {
+  max-width: 20%;
+}
+
+.footer-main-logo {
+  padding-top: 18px;
+}
+
+.footer-main-logo img {
+  width: 60%;
+}
+
+.footer-vision {
+  max-width: 35%;
+}
+
+.footer-vision-quote {
+  line-height: 30px;
+}
+
+.footer-socials-list {
+  padding-left: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-socials-list-item {
+  list-style: none;
+  padding: 0 20px;
   font-size: 30px;
+}
+
+.footer-socials-list-item i {
+  color: white;
+}
+
+.footer-contacts-list {
+  padding-left: 0px;
+  text-align: left;
+}
+
+.footer-contacts-list-item {
+  list-style: none;
+  padding-bottom: 8px;
+}
+
+.footer-contacts-list-item i {
+  padding: 0 10px;
 }
