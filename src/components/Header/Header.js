@@ -44,7 +44,7 @@ export default function Header() {
             <Link to="/inspiration">Inspiration</Link>
           </li>
 
-          {userNav}
+          {guestNav}
         </ul>
       </nav>
     </header>

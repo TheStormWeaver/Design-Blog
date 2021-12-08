@@ -1,0 +1,33 @@
+[
+  {
+  "id": 1,
+  "title": "How to design better logos",
+  "text": "The ultimate guide to designing the best logos!",
+  "description": "In as name to here them deny wise this. As rapid woody my he me which. Men but they fail shew just wish next put.",
+  "imgUrl": "https://i.graphicmama.com/blog/wp-content/uploads/2019/10/22080623/free-animal-clipart-collection-farm-animals-cartoon-icons-set-hen-gobbler-cow-horse-ram-cat-bunny-isolated.jpg",
+  "imgCollection": ["https://img.freepik.com/free-vector/big-animals-set_1284-10911.jpg?size=338&ext=jpg", "https://cdn.pixabay.com/photo/2016/10/10/14/13/dog-1728494__480.png"]
+}, {
+  "id": 2,
+  "title": "Design trends for 2022",
+  "text": "Check out all of the new tends for this year!",
+  "description": "Was justice improve age article between. No projection as up preference reasonably delightful celebrated. Preserved and abilities assurance tolerably breakfast use saw.",
+  "imgUrl": "https://media.gettyimages.com/vectors/north-american-animals-silhouette-set-2-vector-id165659348?s=612x612",
+  "imgCollection": ["https://st3.depositphotos.com/4021867/13114/v/600/depositphotos_131147492-stock-illustration-watercolor-baby-vector-pattern.jpg", "https://us.123rf.com/450wm/comodo777/comodo7771503/comodo777150300003/37358991-farm-animal-vector-set-with-no-background.jpg?ver=6"]
+},
+{
+  "id": 3,
+  "title": "How to style your site for 2022",
+  "text": "View the all new styles for your site!",
+  "description": "Am no an listening depending up believing. Enough around remove to barton agreed regret in or it. Advantage mr estimable be commanded provision.",
+  "imgUrl": "https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2lsZCUyMGFuaW1hbHxlbnwwfHwwfHw%3D&w=1000&q=80",
+  "imgCollection": ["https://images.pexels.com/photos/41315/africa-african-animal-cat-41315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-168504892-1568303467.png?crop=0.754xw:0.911xh;0.191xw,0.0454xh&resize=640:*"]
+},
+{
+  "id": 4,
+  "title": "Tips for re-branding",
+  "text": "Hot tips for the re-branding of your company!",
+  "description": "Agreed joy vanity regret met may ladies oppose who. Mile fail as left as hard eyes. Meet made call in mean four year it to.",
+  "imgUrl": "https://media.wired.com/photos/593261cab8eb31692072f129/master/pass/85120553.jpg",
+  "imgCollection": ["https://images.unsplash.com/photo-1566650554919-44ec6bbe2518?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwYW5pbWFsfGVufDB8fDB8fA%3D%3D&w=1000&q=80", "https://i.natgeofe.com/n/cce82c9b-ffc9-4349-b8aa-f14acf3319f2/departments-covid-animals-tiger.jpg?w=636&h=420"]
+}
+]
