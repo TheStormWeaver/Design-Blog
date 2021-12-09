@@ -9,7 +9,7 @@ export default function Register() {
         <form className="register-form">
           <h2 className="register-form-title">Register</h2>
           <article id="register-form-email-ctn">
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
             <input
               type="email"
               name="email"
@@ -19,7 +19,7 @@ export default function Register() {
           </article>
 
           <article id="register-form-password-ctn">
-            <i class="fas fa-lock"></i>
+            <i className="fas fa-lock"></i>
             <input
               type="password"
               name="password"
@@ -29,7 +29,7 @@ export default function Register() {
           </article>
 
           <article id="register-form-rePassword-ctn">
-          <i class="fas fa-check-circle"></i>
+          <i className="fas fa-check-circle"></i>
             <input
               type="password"
               name="rePassword"

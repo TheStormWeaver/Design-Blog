@@ -10,7 +10,7 @@ export default function Login() {
 
         <form className="login-form">
           <article id="login-form-email-ctn">
-          <i class="fas fa-user"></i>
+          <i className="fas fa-user"></i>
             <input
               type="email"
               name="email"
@@ -20,7 +20,7 @@ export default function Login() {
           </article>
 
           <article id="login-form-password-ctn">
-          <i class="fas fa-lock"></i>
+          <i className="fas fa-lock"></i>
             <input
               type="password"
               name="password"
