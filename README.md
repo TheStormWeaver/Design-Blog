@@ -13,17 +13,17 @@ Unauthorized (not logged in) users have acess to:
 - About us page
 - Register page
 - Login page
-- Inspiration page -work in progress
+- Inspiration page (work in progress)
 
 Authorized (Logged in) users:
-- Can view all designs posted by users including themselves -work in progress
-- Can Create design -work in progress
-- Can edit designs that they have created -todo
-- Can delete designs that they have created -todo
-- Can like other people's designs -todo
-- Can access their own profile page -todo
-- Can edit their profile -todo
-- Can logout from their profile
+- Can logout from their profile 
+- Can view all designs posted by users including themselves (work in progress)
+- Can Create design (work in progress)
+- Can edit designs that they have created (todo)
+- Can delete designs that they have created (todo)
+- Can like other people's designs (todo)
+- Can access their own profile page (todo)
+- Can edit their profile (todo)
 
 
 # Running the project
