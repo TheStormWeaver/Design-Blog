@@ -4,8 +4,9 @@ Design Blog is a project created for the project defense of the React Softuni Co
 Project requirements document: [ReactJS-Project-Assignment.docx](https://github.com/TheStormWeaver/Design-Blog/files/7687984/ReactJS-Project-Assignment.docx)
 
 
-## About project
+## About the project
 Design Blog  is an app that serves as an site that focuses on sharing inspiration trough a community of designers. Users can publish their own art designs. Once published, the design is displayed in the "Inspiration" tab along with all other designs created beforehand. The given user that created the design can edit it at any given time, whilst updating in the database or even delete it, removing it permanently from the database. Each user has a profile page in which they can edit thier profile icon.
+Note: the project requires the sofuni-practice-server (in the "server" folder) to be running at all times for everything to be working correctly.
 
 ## User Access and restrictions
 Unauthorized (not logged in) users have access to:
