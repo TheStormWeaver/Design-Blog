@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
+import { AuthContext } from "./contexts/AuthContext";
+
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
@@ -13,22 +15,42 @@ import Inspiration from "./components/Inspiration/Inspiration";
 import DesignCreation from "./components/DesignCreation/DesignCreation";
 
 function App() {
+  const [user, setUser] = useState({
+    _id: "",
+    email: "",
+    accessToken: "",
+  });
+
+  const loginUser = (authData) => {
+    setUser(authData);
+  };
+
+  function logoutUser() {
+    setUser({
+      _id: "",
+      email: "",
+      accessToken: "",
+    });
+  }
+
   return (
-    <div className="App">
-      <Header />
+    <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
+      <div className="App">
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/logout" element={<Logout />}></Route>
-        <Route path="/inspiration" element={<Inspiration />}></Route>
-        <Route path="/create" element={<DesignCreation />}></Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/logout" element={<Logout />}></Route>
+          <Route path="/inspiration" element={<Inspiration />}></Route>
+          <Route path="/create" element={<DesignCreation />}></Route>
+        </Routes>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </AuthContext.Provider>
   );
 }
 

@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { AuthContext } from "../../contexts/AuthContext";
 
 import "./Header.css";
 
 export default function Header() {
+  const { user } = useContext(AuthContext)
   let userNav = (
     <>
       <li className="navbar-list-item">
@@ -44,7 +48,7 @@ export default function Header() {
             <Link to="/inspiration">Inspiration</Link>
           </li>
 
-          {guestNav}
+          {user.email ? userNav : guestNav}
         </ul>
       </nav>
     </header>

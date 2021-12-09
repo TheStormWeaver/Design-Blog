@@ -1,12 +1,34 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import { AuthContext } from "../../contexts/AuthContext";
+import * as authService from "../../services/authService";
 
 import "./Register.css";
 
 export default function Register() {
+  const navigate = useNavigate();
+  const { loginUser } = useContext(AuthContext);
+
+  function onRegister(e) {
+    e.preventDefault();
+
+    let formData = new FormData(e.currentTarget);
+
+    let email = formData.get("email");
+    let password = formData.get("password");
+    let rePassword = formData.get("rePassword");
+
+    authService.Login(email, password).then((data) => {
+      loginUser(data);
+      navigate("/");
+    });
+  }
+
   return (
     <section id="register-card-container">
       <article className="register-card">
-        <form className="register-form">
+        <form className="register-form" onSubmit={onRegister} method="POST">
           <h2 className="register-form-title">Register</h2>
           <article id="register-form-email-ctn">
             <i className="fas fa-user"></i>
@@ -29,7 +51,7 @@ export default function Register() {
           </article>
 
           <article id="register-form-rePassword-ctn">
-          <i className="fas fa-check-circle"></i>
+            <i className="fas fa-check-circle"></i>
             <input
               type="password"
               name="rePassword"
