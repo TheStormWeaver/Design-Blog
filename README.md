@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Design-Blog
+Design Blog is a project created for the project defense of the React Softuni Course (November - December 2021) (https://softuni.bg/trainings/3575/reactjs-november-2021) as part of the Front-End (September - December 2021)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project requirements document: [ReactJS-Project-Assignment.docx](https://github.com/TheStormWeaver/Design-Blog/files/7687984/ReactJS-Project-Assignment.docx)
 
-## Available Scripts
 
-In the project directory, you can run:
+## About project
+Design Blog  is an app that serves as an site that focuses on sharing inspiration trough a community of designers. Users can publish their own art designs. Once published, the design is displayed in the "Inspiration" tab along with all other designs created beforehand. The given user that created the design can edit it at any given time, whilst updating in the database or even delete it, removing it permanently from the database. Each user has a profile page in which they can edit thier profile icon.
 
-### `npm start`
+## User Access and restrictions
+Unauthorized (not logged in) users have acess to:
+- Home page
+- About us page
+- Register page
+- Login page
+- Inspiration page -work in progress
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Authorized (Logged in) users:
+- Can view all designs posted by users including themselves -work in progress
+- Can Create design -work in progress
+- Can edit designs that they have created -todo
+- Can delete designs that they have created -todo
+- Can like other people's designs -todo
+- Can access their own profile page -todo
+- Can edit their profile -todo
+- Can logout from their profile
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Running the project
+1. Clone this repo or save it as a zip
+2. Enter the directory of the project in a ide of choice
+3. Run "npm install"
+4. Run the command "npm start"
+5. Enter the directory of the "server" folder
+6. Run the command "node server.js" inside of the server directory in the CMD
