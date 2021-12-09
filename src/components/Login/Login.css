@@ -1,1 +1,79 @@
-/* */
+.login-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 93vh;
+  background-image: url("/src/assets/galaxy.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.login-card {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  border-radius: 10px;
+  padding: 40px;
+  background: #fff;
+  min-width: 500px;
+  min-height: 480px;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 38px;
+}
+
+#login-form-password,
+#login-form-email {
+  padding: 12px 5px 10px 30px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  width: 95%;
+}
+
+#login-form-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.login-form-submitBtn {
+  border-radius: 40px;
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  font-size: 18px;
+  background: rgb(66, 151, 208);
+  background: linear-gradient(
+    25deg,
+    rgba(66, 151, 208, 1) 0%,
+    rgba(25, 3, 102, 1) 50%,
+    rgba(249, 90, 233, 1) 100%
+  );
+}
+
+.login-form-submitBtn:hover {
+  background-color: #9867c5;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+#login-form-password:focus,
+#login-form-email:focus {
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid purple;
+  border-radius: 2px;
+}
+
+.login-register-link {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.login-register-link a {
+  text-decoration: none;
+  color: #571672;
+}
