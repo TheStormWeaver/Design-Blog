@@ -10,8 +10,12 @@ export async function Register(email, password) {
   });
 
   const result = await res.json();
-
-  return result;
+  
+  if (res.ok) {
+    return result;
+  } else {
+    throw result;
+  }
 }
 
 export async function Login(email, password) {

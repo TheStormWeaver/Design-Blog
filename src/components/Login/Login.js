@@ -41,13 +41,13 @@ export default function Login() {
           </article>
 
           <article id="login-form-password-ctn">
-            <i className="fas fa-lock"></i>
             <input
               type="password"
               name="password"
               id="login-form-password"
               placeholder="Password"
             />
+            <label htmlFor="password"><i className="fas fa-lock"></i></label>
           </article>
 
           <article id="login-form-button-container">

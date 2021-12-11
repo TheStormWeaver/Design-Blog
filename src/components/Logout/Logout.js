@@ -9,6 +9,10 @@ export default function Logout() {
   const { user, logoutUser } = useContext(AuthContext);
 
   useEffect(() => {
+    if (!user.email) {
+      return <Navigate to="/" />;
+    }
+
     authService.Logout(user.accessToken).then(() => {
       logoutUser();
       navigate("/");

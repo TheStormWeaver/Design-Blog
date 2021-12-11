@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 93vh;
+  height: 845px;
   background-image: url("/src/assets/galaxy.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -18,18 +18,39 @@
   min-height: 480px;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .login-title {
   text-align: center;
   font-size: 38px;
 }
 
+#login-form-password-ctn,
+#login-form-email-ctn {
+  position: relative;
+  width: 80%;
+}
+
+#login-form-password-ctn i,
+#login-form-email-ctn i {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 20px;
+}
+
 #login-form-password,
 #login-form-email {
-  padding: 12px 5px 10px 30px;
+  padding: 12px 5px 10px 35px;
   margin-bottom: 30px;
+  font-size: 18px;
   border: none;
   border-bottom: 2px solid #d9d9d9;
-  width: 95%;
+  width: 100%;
 }
 
 #login-form-button-container {
@@ -62,7 +83,7 @@
 
 #login-form-password:focus,
 #login-form-email:focus {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   border: 2px solid purple;
   border-radius: 2px;

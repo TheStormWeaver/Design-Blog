@@ -1,0 +1,17 @@
+.designCreation-ctn {
+    height: 830px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.designCreation-card {
+    background-color: black;
+    color: white;
+    padding: 42px 55px 45px 55px;
+}
+
+.designCreation-title {
+    font-size: 40px;
+}

@@ -19,7 +19,7 @@ export default function Register() {
     let password = formData.get("password");
     let rePassword = formData.get("rePassword");
 
-    authService.Login(email, password).then((data) => {
+    authService.Register(email, password).then((data) => {
       loginUser(data);
       navigate("/");
     });
