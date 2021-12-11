@@ -14,6 +14,8 @@ import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import Inspiration from "./components/Inspiration/Inspiration";
 import DesignCreation from "./components/DesignCreation/DesignCreation";
+import DesignEdit from "./components/DesignEdit/DesignEdit";
+import DesignDetails from "./components/DesignDetails/DesignDetails";
 
 function App() {
   const [user, setUser] = useLocalStorage("user", {
@@ -47,6 +49,8 @@ function App() {
           <Route path="/logout" element={<Logout />}></Route>
           <Route path="/inspiration" element={<Inspiration />}></Route>
           <Route path="/create" element={<DesignCreation />}></Route>
+          <Route path="/details/:designId" element={<DesignDetails />}></Route>
+          <Route path="/edit/:designId" element={<DesignEdit />}></Route>
         </Routes>
 
         <Footer />

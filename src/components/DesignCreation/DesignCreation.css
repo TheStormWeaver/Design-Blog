@@ -1,41 +1,67 @@
 .designCreation-ctn {
-    height: 830px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/assets/purple-galaxy.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .designCreation-card {
-    background-color: black;
-    color: white;
-    padding: 42px 55px 45px 55px;
+  background-color: rgba(0,0,0, 0.8);;
+  color: white;
+  padding: 42px 55px 45px 55px;
+  min-width: 500px;
+  border-radius: 12px;
 }
 
 .designCreation-title {
-    font-size: 32px;
-    padding-bottom: 44px;
+  font-size: 32px;
+  padding-bottom: 36px;
+  text-align: center;
 }
 
 .designCreation-form article {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: transparent;
-    padding-bottom: 13px;
-    margin-bottom: 27px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .designCreation-form label {
-    width: 100%;
-  }
-  
-  .designCreation-form input {
-    background: transparent;
-    border: none;
-  }
-  
-  .designCreation-form input:focus {
-    outline: none
-  }
-  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  padding-bottom: 13px;
+  margin-bottom: 27px;
+}
+
+.designCreation-form label {
+  display: block;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 16px;
+}
+
+.designCreation-form input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 19px;
+  width: 100%;
+}
+
+.designCreation-form input:focus {
+  outline: none;
+}
+
+#designCreation-form-submitBtn-ctn {
+  text-align: center;
+  padding-top: 20px;
+}
+
+#designCreation-form-submitBtn {
+  padding: 13px 90px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+#designCreation-form-submitBtn-ctn {
+  border-bottom: none;
+}

@@ -56,6 +56,10 @@ export default function DesignCreation() {
               placeholder="https://image.png, https://image.jpg"
             />
           </article>
+
+          <article id="designCreation-form-submitBtn-ctn">
+            <button id="designCreation-form-submitBtn">Create Design</button>
+          </article>
         </form>
       </article>
     </section>

@@ -7,7 +7,7 @@ export default function Footer() {
       <section className="footer-content">
         <article className="footer-main">
           <article className="footer-main-logo">
-            <img src="./images/logo-text.png" alt="logo" />
+            <img src="/images/logo-text.png" alt="logo" />
           </article>
         </article>
 

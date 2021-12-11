@@ -1,0 +1,68 @@
+.designEdit-ctn {
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/src/assets/gradient-galaxy.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .designEdit-card {
+    background-color: rgba(0,0,0, 0.8);;
+    color: white;
+    padding: 42px 55px 45px 55px;
+    min-width: 500px;
+    border-radius: 12px;
+  }
+  
+  .designEdit-title {
+    font-size: 32px;
+    padding-bottom: 36px;
+    text-align: center;
+  }
+  
+  .designEdit-form article {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    padding-bottom: 13px;
+    margin-bottom: 27px;
+  }
+  
+  .designEdit-form label {
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .designEdit-form input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 19px;
+    width: 100%;
+  }
+  
+  .designEdit-form input:focus {
+    outline: none;
+  }
+  
+  #designEdit-form-submitBtn-ctn {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  #designEdit-form-submitBtn {
+    padding: 13px 90px;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 18px;
+  }
+  
+  #designEdit-form-submitBtn-ctn {
+    border-bottom: none;
+  }
+  

@@ -35,7 +35,7 @@ export default function Header() {
       <nav className="navbar">
         <article className="navbar-logo">
           <Link to="/">
-            <img src="./images/logo.png" alt="logo" />
+            <img src="/images/logo.png" alt="logo" />
           </Link>
         </article>
 
