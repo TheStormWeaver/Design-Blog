@@ -13,5 +13,29 @@
 }
 
 .designCreation-title {
-    font-size: 40px;
+    font-size: 32px;
+    padding-bottom: 44px;
 }
+
+.designCreation-form article {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    padding-bottom: 13px;
+    margin-bottom: 27px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .designCreation-form label {
+    width: 100%;
+  }
+  
+  .designCreation-form input {
+    background: transparent;
+    border: none;
+  }
+  
+  .designCreation-form input:focus {
+    outline: none
+  }
+  

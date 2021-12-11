@@ -1,1 +1,8 @@
-/* */
+.inspiration-container {
+    min-height: 840px;
+}
+
+.construction {
+    text-align: center;
+    font-size: 40px;
+}

@@ -26,16 +26,20 @@
     rgba(230, 86, 232, 1) 100%
   );
   color: white;
-  background: rgb(38,101,182);
-  background: linear-gradient(25deg, rgba(38,101,182,1) 0%, rgba(104,59,201,1) 50%, rgba(0,17,43,1) 100%);
+  background: rgb(38, 101, 182);
+  background: linear-gradient(
+    25deg,
+    rgba(38, 101, 182, 1) 0%,
+    rgba(104, 59, 201, 1) 50%,
+    rgba(0, 17, 43, 1) 100%
+  );
 }
 
 .register-form {
   margin-top: 100px;
 }
 
-#register-form-rePassword:focus
-#register-form-password:focus,
+#register-form-rePassword:focus #register-form-password:focus,
 #register-form-email:focus {
   font-size: 16px;
   font-weight: 600;
@@ -99,8 +103,6 @@
   padding: 20px 0;
 }
 
-
-
 .register-form-submitBtn {
   border-radius: 40px;
   border: none;
@@ -111,7 +113,7 @@
 }
 
 .register-form-submitBtn:hover {
-  background-color: #9867c5;
+  background-color: #cdffff;
   transform: translateY(-2px);
   cursor: pointer;
 }

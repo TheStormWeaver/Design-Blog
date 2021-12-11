@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import { AuthContext } from "./contexts/AuthContext";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -15,7 +16,7 @@ import Inspiration from "./components/Inspiration/Inspiration";
 import DesignCreation from "./components/DesignCreation/DesignCreation";
 
 function App() {
-  const [user, setUser] = useState({
+  const [user, setUser] = useLocalStorage("user", {
     _id: "",
     email: "",
     accessToken: "",
