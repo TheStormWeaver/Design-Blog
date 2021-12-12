@@ -43,6 +43,16 @@ export default function DesignCreation() {
               type="text"
               name="text"
               className="designCreation-form-text"
+              placeholder="A better way to use colors in any type of design."
+            />
+          </article>
+
+          <article className="designCreation-form-desc-ctn">
+            <label htmlFor="description">Description</label>
+            <input
+              type="text"
+              name="desc"
+              className="designCreation-form-desc"
               placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
             />
           </article>

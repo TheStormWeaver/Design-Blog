@@ -1,5 +1,5 @@
 .designCreation-ctn {
-  height: 850px;
+  height: 880px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@
 .designCreation-card {
   background-color: rgba(0,0,0, 0.8);;
   color: white;
-  padding: 42px 55px 45px 55px;
+  padding: 20px 40px 45px 50px;
   min-width: 500px;
   border-radius: 12px;
 }
@@ -53,6 +53,8 @@
 #designCreation-form-submitBtn-ctn {
   text-align: center;
   padding-top: 20px;
+  padding-bottom: 0;
+  margin-bottom: 5px;
 }
 
 #designCreation-form-submitBtn {

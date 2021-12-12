@@ -4,7 +4,7 @@ export default function DesignEdit() {
   return (
     <section className="designEdit-ctn">
       <article className="designEdit-card">
-        <h2 className="designEdit-title">Express your self</h2>
+        <h2 className="designEdit-title">Edit your design</h2>
         <form className="designEdit-form">
           <article className="designEdit-form-title-ctn">
             <label htmlFor="title">Title</label>
@@ -32,6 +32,16 @@ export default function DesignEdit() {
               type="text"
               name="text"
               className="designEdit-form-text"
+              placeholder="A better way to use colors in any type of design."
+            />
+          </article>
+
+          <article className="designEdit-form-desc-ctn">
+            <label htmlFor="description">Description</label>
+            <input
+              type="text"
+              name="desc"
+              className="designEdit-form-desc"
               placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
             />
           </article>
