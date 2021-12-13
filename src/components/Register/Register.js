@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
@@ -7,8 +7,13 @@ import * as authService from "../../services/authService";
 import "./Register.css";
 
 export default function Register() {
-  const navigate = useNavigate();
+  const [errors, setErrors] = useState({
+    emailTxt: null,
+    passTxt: null,
+    rePassTxt: null,
+  });
   const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   function onRegister(e) {
     e.preventDefault();
@@ -25,6 +30,46 @@ export default function Register() {
     });
   }
 
+  function emailBlurHandler(e) {
+    let email = e.target.value;
+    let emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gm;
+
+    if (!email.match(emailRegex)) {
+      setErrors((state) => ({
+        ...state,
+        emailTxt: "The email must be valid",
+      }));
+    } else {
+      setErrors((state) => ({ ...state, emailTxt: false }));
+    }
+  }
+
+  function passBlurHandler(e) {
+    let pass = e.target.value;
+
+    if (pass.length < 3) {
+      setErrors((state) => ({
+        ...state,
+        passTxt: "Password must be over 3 characters",
+      }));
+    } else {
+      setErrors((state) => ({ ...state, passTxt: false }));
+    }
+  }
+
+  function rePassBlurHandler(e) {
+    let rePass = e.target.value;
+
+    if (!rePass) {
+      setErrors((state) => ({
+        ...state,
+        rePassTxt: "Repeat Password is required",
+      }));
+    } else {
+      setErrors((state) => ({ ...state, rePassTxt: false }));
+    }
+  }
+
   return (
     <section id="register-card-container">
       <article className="register-card">
@@ -37,7 +82,11 @@ export default function Register() {
               name="email"
               id="register-form-email"
               placeholder="Email Address"
+              onBlur={emailBlurHandler}
             />
+            <p className={errors.emailTxt ? "error" : "hidden"}>
+              {errors.emailTxt}
+            </p>
           </article>
 
           <article id="register-form-password-ctn">
@@ -47,7 +96,11 @@ export default function Register() {
               name="password"
               id="register-form-password"
               placeholder="Password"
+              onBlur={passBlurHandler}
             />
+            <p className={errors.passTxt ? "error" : "hidden"}>
+              {errors.passTxt}
+            </p>
           </article>
 
           <article id="register-form-rePassword-ctn">
@@ -57,7 +110,11 @@ export default function Register() {
               name="rePassword"
               id="register-form-rePassword"
               placeholder="Repeat Password"
+              onBlur={rePassBlurHandler}
             />
+            <p className={errors.rePassTxt ? "error" : "hidden"}>
+              {errors.rePassTxt}
+            </p>
           </article>
 
           <article id="register-form-button-container">

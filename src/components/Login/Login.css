@@ -27,33 +27,34 @@
 .login-title {
   text-align: center;
   font-size: 38px;
+  padding-bottom: 20px;
 }
 
-#login-form-password-ctn,
-#login-form-email-ctn {
+.login-form-password-ctn,
+.login-form-email-ctn {
   position: relative;
   width: 80%;
+  margin-bottom: 30px;
 }
 
-#login-form-password-ctn i,
-#login-form-email-ctn i {
+.login-form-password-ctn i,
+.login-form-email-ctn i {
   position: absolute;
   top: 10px;
   left: 5px;
   font-size: 20px;
 }
 
-#login-form-password,
-#login-form-email {
+.login-form-password,
+.login-form-email {
   padding: 12px 5px 10px 35px;
-  margin-bottom: 30px;
   font-size: 18px;
   border: none;
   border-bottom: 2px solid #d9d9d9;
   width: 100%;
 }
 
-#login-form-button-container {
+.login-form-button-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -81,8 +82,8 @@
   cursor: pointer;
 }
 
-#login-form-password:focus,
-#login-form-email:focus {
+.login-form-password:focus,
+.login-form-email:focus {
   font-size: 16px;
   font-weight: 600;
   border: 2px solid purple;
@@ -97,4 +98,25 @@
 .login-register-link a {
   text-decoration: none;
   color: #571672;
+}
+
+#redInput {
+  border-color: #5f2c76;
+}
+
+#normalInput {
+  border-color: #d9d9d9;
+}
+
+.error {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0px #140136;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
 }
