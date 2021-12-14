@@ -23,8 +23,7 @@ export default function Login() {
     let password = formData.get("password");
 
     authService.Login(email, password).then((data) => {
-      console.log(data);
-      if (data.code == "403") {
+      if (data == "403") {
         setShowError(true);
       } else {
         loginUser(data);
@@ -39,36 +38,35 @@ export default function Login() {
     setShowError(false);
   };
 
-  function emailBlurHandler(e) {
-    let email = e.target.value;
+  function formValChange(e) {
+    const { name, value } = e.target;
     let emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gm;
 
-    if (!email.match(emailRegex)) {
-      setErrors((state) => ({
-        ...state,
-        emailTxt: "The email must be valid",
-      }));
-    } else {
-      setErrors((state) => ({ ...state, emailTxt: false }));
-    }
-  }
-
-  function passBlurHandler(e) {
-    let pass = e.target.value;
-
-    if (pass.length < 3) {
-      setErrors((state) => ({
-        ...state,
-        passTxt: "Password must be over 3 characters",
-      }));
-    } else {
-      setErrors((state) => ({ ...state, passTxt: false }));
+    switch (name) {
+      case "email":
+        emailRegex.test(value)
+          ? setErrors((state) => ({ ...state, emailTxt: false }))
+          : setErrors((state) => ({
+              ...state,
+              emailTxt: "Email address is invalid",
+            }));
+        break;
+      case "password":
+        value.length < 3
+          ? setErrors((state) => ({
+              ...state,
+              passTxt: "Password is required",
+            }))
+          : setErrors((state) => ({ ...state, passTxt: false }));
+        break;
+      default:
+        break;
     }
   }
 
   return (
     <section className="login-card-container">
-      <ErrorModal show={showError} onClose={onClose}/>
+      <ErrorModal show={showError} onClose={onClose} message={"Username or password don't match"}/>
 
       <article className="login-card">
         <h2 className="login-title">Login</h2>
@@ -81,7 +79,7 @@ export default function Login() {
               name="email"
               className="login-form-email"
               placeholder="Email Address"
-              onBlur={emailBlurHandler}
+              onBlur={formValChange}
               id={errors.emailTxt ? "redInput" : "normalInput"}
             />
             <p className={errors.emailTxt ? "error" : "hidden"}>
@@ -95,7 +93,7 @@ export default function Login() {
               name="password"
               className="login-form-password"
               placeholder="Password"
-              onBlur={passBlurHandler}
+              onBlur={formValChange}
               id={errors.passTxt ? "redInput" : "normalInput"}
             />
             <label htmlFor="password">

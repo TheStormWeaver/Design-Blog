@@ -14,7 +14,7 @@ export async function Register(email, password) {
   if (res.ok) {
     return result;
   } else {
-    throw result;
+    return result.code;
   }
 }
 

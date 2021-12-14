@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import * as authService from "../../services/authService";
 
+import ErrorModal from "../Common/ErrorModal";
+
 import "./Register.css";
 
 export default function Register() {
@@ -12,6 +14,7 @@ export default function Register() {
     passTxt: null,
     rePassTxt: null,
   });
+  const [showError, setShowError] = useState(false);
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -24,54 +27,72 @@ export default function Register() {
     let password = formData.get("password");
     let rePassword = formData.get("rePassword");
 
+    if (password != rePassword) {
+      setErrors((state) => ({
+        ...state,
+        rePassTxt: "Passwords do not match",
+      }));
+    }
+
     authService.Register(email, password).then((data) => {
-      loginUser(data);
-      navigate("/");
+      if (data == "409") {
+        setShowError(true);
+      } else if (data == "400") {
+        throw data;
+      } else {
+        loginUser(data);
+        navigate("/");
+      }
     });
   }
 
-  function emailBlurHandler(e) {
-    let email = e.target.value;
+  const onClose = (e) => {
+    e.preventDefault();
+
+    setShowError(false);
+  };
+
+  function formValChange(e) {
+    const { name, value } = e.target;
     let emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gm;
 
-    if (!email.match(emailRegex)) {
-      setErrors((state) => ({
-        ...state,
-        emailTxt: "The email must be valid",
-      }));
-    } else {
-      setErrors((state) => ({ ...state, emailTxt: false }));
-    }
-  }
-
-  function passBlurHandler(e) {
-    let pass = e.target.value;
-
-    if (pass.length < 3) {
-      setErrors((state) => ({
-        ...state,
-        passTxt: "Password must be over 3 characters",
-      }));
-    } else {
-      setErrors((state) => ({ ...state, passTxt: false }));
-    }
-  }
-
-  function rePassBlurHandler(e) {
-    let rePass = e.target.value;
-
-    if (!rePass) {
-      setErrors((state) => ({
-        ...state,
-        rePassTxt: "Repeat Password is required",
-      }));
-    } else {
-      setErrors((state) => ({ ...state, rePassTxt: false }));
+    switch (name) {
+      case "email":
+        emailRegex.test(value)
+          ? setErrors((state) => ({ ...state, emailTxt: false }))
+          : setErrors((state) => ({
+              ...state,
+              emailTxt: "Email address is invalid",
+            }));
+        break;
+      case "password":
+        value.length < 1
+          ? setErrors((state) => ({
+              ...state,
+              passTxt: "Password is required",
+            }))
+          : setErrors((state) => ({ ...state, passTxt: false }));
+        break;
+      case "rePassword":
+        value < 1
+          ? setErrors((state) => ({
+              ...state,
+              rePassTxt: "Repeat password is required",
+            }))
+          : setErrors((state) => ({ ...state, rePassTxt: false }));
+        break;
+      default:
+        break;
     }
   }
 
   return (
     <section id="register-card-container">
+      <ErrorModal
+        show={showError}
+        onClose={onClose}
+        message={"User already exists"}
+      />
       <article className="register-card">
         <form className="register-form" onSubmit={onRegister} method="POST">
           <h2 className="register-form-title">Register</h2>
@@ -82,7 +103,7 @@ export default function Register() {
               name="email"
               id="register-form-email"
               placeholder="Email Address"
-              onBlur={emailBlurHandler}
+              onBlur={formValChange}
             />
             <p className={errors.emailTxt ? "error" : "hidden"}>
               {errors.emailTxt}
@@ -96,7 +117,7 @@ export default function Register() {
               name="password"
               id="register-form-password"
               placeholder="Password"
-              onBlur={passBlurHandler}
+              onBlur={formValChange}
             />
             <p className={errors.passTxt ? "error" : "hidden"}>
               {errors.passTxt}
@@ -110,7 +131,7 @@ export default function Register() {
               name="rePassword"
               id="register-form-rePassword"
               placeholder="Repeat Password"
-              onBlur={rePassBlurHandler}
+              onBlur={formValChange}
             />
             <p className={errors.rePassTxt ? "error" : "hidden"}>
               {errors.rePassTxt}

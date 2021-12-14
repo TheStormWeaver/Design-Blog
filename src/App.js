@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { AuthContext } from "./contexts/AuthContext";
 import useLocalStorage from "./hooks/useLocalStorage";
