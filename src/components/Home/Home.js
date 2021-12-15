@@ -90,7 +90,7 @@ export default function Home() {
         </article>
 
         <article className="art-banner-img">
-          <img src="./images/jungle.png" alt="panther" />
+          <img src="./images/web-design.png" alt="design" />
         </article>
       </section>
     </>

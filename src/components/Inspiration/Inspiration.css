@@ -1,8 +1,9 @@
 .inspiration-container {
-    min-height: 840px;
+  min-height: 840px;
+  background: linear-gradient(45deg, #4055e0, #e601e9);
 }
 
 .construction {
-    text-align: center;
-    font-size: 40px;
+  text-align: center;
+  font-size: 40px;
 }
