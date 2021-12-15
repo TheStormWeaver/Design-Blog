@@ -40,40 +40,25 @@ export default function Home() {
       </section>
 
       <section className="color-banner">
-        <article className="color-banner-item">
-          <article className="color-banner-item-img">
-            <img src="./icons/typing.png" alt="platform" />
+        <article className="color-banner-ctn">
+          <article className="color-banner-icon">
+            <img src="./icons/graphic-tablet.png" alt="design" />
           </article>
-          <h3 className="color-banner-item-title">
-            A platform for all designers
-          </h3>
-          <p className="color-banner-item-text">
-            Join a welcoming community made up of all kinds of designers
-          </p>
+          <h2 className="color-banner-title">Design</h2>
         </article>
 
-        <article className="color-banner-item">
-          <article className="color-banner-item-img">
-            <img src="./icons/design.png" alt="platform" />
+        <article className="color-banner-ctn">
+          <article className="color-banner-icon">
+            <img src="./icons/book.png" alt="design" />
           </article>
-          <h3 className="color-banner-item-title">
-            Inspire yourself to create
-          </h3>
-          <p className="color-banner-item-text">
-            Take a deep dive into the world of design and expand your view
-          </p>
+          <h2 className="color-banner-title">Collection</h2>
         </article>
 
-        <article className="color-banner-item">
-          <article className="color-banner-item-img">
-            <img src="./icons/site.png" alt="platform" />
+        <article className="color-banner-ctn">
+          <article className="color-banner-icon">
+            <img src="./icons/communication.png" alt="design" />
           </article>
-          <h3 className="color-banner-item-title">
-            Showcase your amazing work
-          </h3>
-          <p className="color-banner-item-text">
-            Share your work to get feedback, improve and inspire others
-          </p>
+          <h2 className="color-banner-title">Communication</h2>
         </article>
       </section>
 
