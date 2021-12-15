@@ -56,7 +56,6 @@
   color: white;
   text-align: center;
   padding: 80px 200px;
-  margin-top: -4px;
   display: flex;
   align-items: center;
 }
@@ -96,7 +95,6 @@
 
 .art-banner-img img {
   width: 100%;
-  margin-bottom: -4px;
 }
 
 .art-banner-text {

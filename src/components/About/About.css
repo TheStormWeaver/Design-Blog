@@ -1,3 +1,55 @@
-.interlude-banner img {
-    width: 100%;
+.about-mainBanner-mainImg img {
+  width: 100%;
+}
+
+.about-mainBanner-sideImg img {
+  width: 100%;
+}
+
+.about-mainBanner-info {
+  padding: 34px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-mainBanner-info-title {
+  max-width: 40%;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+.about-mainBanner-info-text {
+  max-width: 55%;
+  font-size: 19px;
+}
+
+.ourWork-banner {
+  display: flex;
+  align-items: center;
+}
+
+.ourWork-banner-img {
+  width: 80%;
+}
+
+.ourWork-banner-img img {
+  width: 100%;
+}
+
+.ourWork-banner-text {
+  width: 50%;
+  margin-left: 80px;
+}
+
+.ourWork-banner-text-title {
+  width: 63%;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.ourWork-banner-text-subtext {
+  width: 58%;
+  font-size: 19px;
 }

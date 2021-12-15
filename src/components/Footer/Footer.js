@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer() {
@@ -7,7 +8,9 @@ export default function Footer() {
       <section className="footer-content">
         <article className="footer-main">
           <article className="footer-main-logo">
-            <img src="/images/logo-text.png" alt="logo" />
+            <Link to="/">
+              <img src="/images/logo-text.png" alt="logo" />
+            </Link>
           </article>
         </article>
 
@@ -22,35 +25,39 @@ export default function Footer() {
         <article className="footer-contacts">
           <h3 className="footer-contacts-title">Contact Us</h3>
           <ul className="footer-contacts-list">
-            <li className="footer-contacts-list-item"><i className="fas fa-phone-alt"></i> +359 000 000 000</li>
-            <li className="footer-contacts-list-item"><i className="fas fa-envelope"></i> info.ixtal@mail.com</li>
+            <li className="footer-contacts-list-item">
+              <i className="fas fa-phone-alt"></i> +359 000 000 000
+            </li>
+            <li className="footer-contacts-list-item">
+              <i className="fas fa-envelope"></i> info.ixtal@mail.com
+            </li>
           </ul>
         </article>
 
         <article className="footer-socials">
-            <ul className="footer-socials-list">
-              <li className="footer-socials-list-item">
-                <a href="https://www.facebook.com/">
-                  <i className="fab fa-facebook"></i>
-                </a>
-              </li>
-              <li className="footer-socials-list-item">
-                <a href="https://www.instagram.com/">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li className="footer-socials-list-item">
-                <a href="https://twitter.com/">
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li className="footer-socials-list-item">
-                <a href="https://www.pinterest.com/">
-                  <i className="fab fa-pinterest"></i>
-                </a>
-              </li>
-            </ul>
-          </article>
+          <ul className="footer-socials-list">
+            <li className="footer-socials-list-item">
+              <a href="https://www.facebook.com/">
+                <i className="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li className="footer-socials-list-item">
+              <a href="https://www.instagram.com/">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li className="footer-socials-list-item">
+              <a href="https://twitter.com/">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li className="footer-socials-list-item">
+              <a href="https://www.pinterest.com/">
+                <i className="fab fa-pinterest"></i>
+              </a>
+            </li>
+          </ul>
+        </article>
       </section>
     </footer>
   );

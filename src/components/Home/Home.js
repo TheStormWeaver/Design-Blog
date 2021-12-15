@@ -28,12 +28,12 @@ export default function Home() {
 
         <article className="designer-banner-text">
           <h2 className="designer-banner-text-title">
-            Showcase your true creative side
+            Showcase your true inner creative side
           </h2>
           <p className="designer-banner-text-subtext">
             Ixtal is a platform for sharing inspirational resources in the
             design field. Express your knowledge in the field, with amazing
-            posts about your choosing or upload your work to inspire other
+            posts of your choosing or upload your work to inspire other
             designers.
           </p>
         </article>
