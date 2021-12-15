@@ -1,6 +1,17 @@
+import { useContext } from "react";
+import { Navigate } from "react-router";
+
 import "./DesignEdit.css";
 
+import { AuthContext } from "../../contexts/AuthContext";
+
 export default function DesignEdit() {
+  const { user } = useContext(AuthContext);
+
+  if (!user.email) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <section className="designEdit-ctn">
       <article className="designEdit-card">
