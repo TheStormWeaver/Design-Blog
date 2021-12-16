@@ -1,9 +1,36 @@
-.inspiration-container {
+.inspiration-page {
   min-height: 840px;
-  background: linear-gradient(45deg, #4055e0, #e601e9);
+  padding: 0 100px;
 }
 
-.construction {
+.inspiration-page-title {
+  font-size: 42px;
   text-align: center;
-  font-size: 40px;
+}
+
+.inspiration-page-text {
+  font-size: 22px;
+  text-align: center;
+}
+
+.inspiration-collection-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 22px;
+  padding-right: 22px;
+  max-width: 1380px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inspiration-collection {
+  padding: 30px;
+  max-width: 33%;
+  height: 100%;
+  color: purple;
+}
+
+.inspiration-collection:hover {
+  box-shadow: 0px 0px 4px 0px black;
+  border-radius: 12px;
 }

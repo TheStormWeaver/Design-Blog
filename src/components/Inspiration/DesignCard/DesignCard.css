@@ -1,0 +1,17 @@
+.inspiration-collection-ctn {
+  text-decoration: none;
+  color: black;
+  
+}
+
+.inspiration-collection-ctn {
+    color: black;
+}
+
+.inspiration-collection-ctn:hover {
+  color: #4a4ee1;
+}
+
+.inspiration-collection-img img {
+  width: 100%;
+}

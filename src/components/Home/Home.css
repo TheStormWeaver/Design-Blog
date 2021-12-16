@@ -44,18 +44,24 @@
 }
 
 .color-banner {
-  background-image: url("https://wallpaperaccess.com/full/1092587.jpg");
-  background-size: cover;
+  background: rgb(23, 73, 165);
+  background: linear-gradient(
+    45deg,
+    rgba(23, 73, 165, 1) 0%,
+    rgba(25, 98, 201, 1) 30%,
+    rgba(82, 0, 129, 1) 70%,
+    rgba(60, 30, 130, 1) 100%
+  );
   color: white;
   text-align: center;
-  padding: 80px 200px;
+  padding: 60px 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .color-banner-icon img {
-  width: 40%;
+  width: 38%;
 }
 
 .color-banner-title {

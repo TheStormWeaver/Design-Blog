@@ -55,7 +55,16 @@
 }
 
 .items-banner {
-  background-color: #bcd1fe;
+  background: rgb(6, 12, 98);
+  background: linear-gradient(
+    45deg,
+    rgba(6, 12, 98, 1) 0%,
+    rgba(16, 63, 141, 1) 25%,
+    rgba(41, 67, 178, 1) 50%,
+    rgba(28, 176, 209, 1) 75%,
+    rgba(46, 253, 207, 1) 100%
+  );
+  color: white;
   display: flex;
   align-items: center;
   text-align: center;

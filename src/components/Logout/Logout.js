@@ -17,7 +17,7 @@ export default function Logout() {
       logoutUser();
       navigate("/");
     });
-  }, []);
+  }, [logoutUser, navigate, user.accessToken, user.email]);
 
   return <Navigate to="/" />;
 }

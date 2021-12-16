@@ -1,13 +1,18 @@
-const baseUrl = "http://localhost:3030";
+const baseUrl = "http://localhost:3030/jsonstore";
 
-export async function getOneDesign() {
+export async function getAllDesigns() {
   let response = await fetch(`${baseUrl}/design`);
 
   let result = await response.json();
-  return result;
+
+  if (response.ok) {
+    return Object.values(result);
+  } else {
+    throw result;
+  }
 }
 
-export async function getAllDesigns(designId) {
+export async function getOneDesign(designId) {
   let response = await fetch(`${baseUrl}/design/${designId}`);
 
   let result = await response.json();
