@@ -14,7 +14,7 @@ Unauthorized (not logged in) users have access to:
 - About us page
 - Register page
 - Login page
-- Inspiration page (work in progress)
+- Inspiration page
 
 Authorized (Logged in) users have access to:
 - The logout page
