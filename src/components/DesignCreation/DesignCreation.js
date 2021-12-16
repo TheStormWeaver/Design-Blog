@@ -1,22 +1,50 @@
 import { useContext } from "react";
-import { Navigate } from "react-router";
+import { useNavigate, Navigate } from "react-router";
 
 import "./DesignCreation.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { CreateDesign } from "../../services/designService";
 
 export default function DesignCreation() {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   if (!user.email) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" />
+  }
+
+  function onDesignCreate(e) {
+    e.preventDefault();
+    let formData = new FormData(e.currentTarget);
+
+    let title = formData.get("title");
+    let text = formData.get("text");
+    let description = formData.get("description");
+    let mainImg = formData.get("mainImg");
+    let imgCollection = formData.get("imgCollection");
+
+    CreateDesign({
+      title,
+      text,
+      description,
+      mainImg,
+      imgCollection,
+      _ownerId: user._id,
+    }, user.accessToken).then(() => {
+      return navigate("/inspiration");
+    });
   }
 
   return (
     <section className="designCreation-ctn">
       <article className="designCreation-card">
         <h2 className="designCreation-title">Express your self</h2>
-        <form className="designCreation-form">
+        <form
+          className="designCreation-form"
+          onSubmit={onDesignCreate}
+          method="POST"
+        >
           <article className="designCreation-form-title-ctn">
             <label htmlFor="title">Title</label>
             <input
@@ -51,7 +79,7 @@ export default function DesignCreation() {
             <label htmlFor="description">Description</label>
             <input
               type="text"
-              name="desc"
+              name="description"
               className="designCreation-form-desc"
               placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
             />

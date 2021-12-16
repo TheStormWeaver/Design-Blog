@@ -17,6 +17,7 @@ export default function Register() {
   const [showError, setShowError] = useState(false);
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  let isCorrect = true;
 
   function onRegister(e) {
     e.preventDefault();
@@ -32,18 +33,21 @@ export default function Register() {
         ...state,
         rePassTxt: "Passwords do not match",
       }));
+      isCorrect = false;
     }
-
-    authService.Register(email, password).then((data) => {
-      if (data == "409") {
-        setShowError(true);
-      } else if (data == "400") {
-        throw data;
-      } else {
-        loginUser(data);
-        navigate("/");
-      }
-    });
+    
+    if (isCorrect) {
+      authService.Register(email, password).then((data) => {
+        if (data == "409") {
+          setShowError(true);
+        } else if (data == "400") {
+          throw data;
+        } else {
+          loginUser(data);
+          navigate("/");
+        }
+      });
+    }
   }
 
   const onClose = (e) => {

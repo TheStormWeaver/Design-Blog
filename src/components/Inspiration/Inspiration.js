@@ -10,7 +10,6 @@ export default function Inspiration() {
 
   useEffect(() => {
     getAllDesigns().then((result) => {
-      console.log(result);
       setDesigns(result);
     });
   }, []);
@@ -24,19 +23,13 @@ export default function Inspiration() {
 
   return (
     <section className="inspiration-page">
-      <h2 className="inspiration-page-title">Design Inspiration & Ideas</h2>
+      <h2 className="inspiration-page-title">Design Inspiration, Tips & Ideas</h2>
       <p className="inspiration-page-text">
         Fuel your best work with our collection of design and transform clever
         concepts into visual reality.
       </p>
       <section className="inspiration-collection-container">
-        {designs.length > 0 ? (
-          designs.map((design) => (
-            <DesignCard key={design._id} design={design} />
-          ))
-        ) : (
-          <p className="empty">There are currently no designs available.</p>
-        )}
+        {designCollection}
       </section>
     </section>
   );
