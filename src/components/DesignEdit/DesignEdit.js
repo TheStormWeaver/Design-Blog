@@ -17,55 +17,93 @@ export default function DesignEdit() {
       <article className="designEdit-card">
         <h2 className="designEdit-title">Edit your design</h2>
         <form className="designEdit-form">
-          <article className="designEdit-form-title-ctn">
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              name="title"
-              className="designEdit-form-title"
-              placeholder="Color theory 101"
-            />
-          </article>
+        <section className="designEdit-form-row">
+            <article className="designEdit-form-title-ctn">
+              <label htmlFor="title">Title</label>
+              <input
+                type="text"
+                name="title"
+                className="designEdit-form-title"
+                placeholder="Color theory 101"
+              />
+            </article>
 
-          <article className="designEdit-form-mainImg-ctn">
-            <label htmlFor="mainImg">Main Image</label>
-            <input
-              type="text"
-              name="mainImg"
-              className="designEdit-form-mainImg"
-              placeholder="https://image.png"
-            />
-          </article>
+            <article className="designEdit-form-text-ctn">
+              <label htmlFor="text">Main Text</label>
+              <input
+                type="text"
+                name="text"
+                className="designEdit-form-text"
+                placeholder="A better way to use colors in any type of design."
+              />
+            </article>
+          </section>
 
-          <article className="designEdit-form-text-ctn">
-            <label htmlFor="text">Text</label>
-            <input
-              type="text"
-              name="text"
-              className="designEdit-form-text"
-              placeholder="A better way to use colors in any type of design."
-            />
-          </article>
+          <section className="designEdit-form-row">
+            <article className="designEdit-form-desc-ctn">
+              <label htmlFor="description">Main Description Text</label>
+              <input
+                type="text"
+                name="description"
+                className="designEdit-form-desc"
+                placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
+              />
+            </article>
 
-          <article className="designEdit-form-desc-ctn">
-            <label htmlFor="description">Description</label>
-            <input
-              type="text"
-              name="desc"
-              className="designEdit-form-desc"
-              placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
-            />
-          </article>
+            <article className="designEdit-form-mainImg-ctn">
+              <label htmlFor="mainImg">Main Image</label>
+              <input
+                type="text"
+                name="mainImg"
+                className="designEdit-form-mainImg"
+                placeholder="https://image.png"
+              />
+            </article>
+          </section>
 
-          <article className="designEdit-form-imgCollection-ctn">
-            <label htmlFor="imgCollection">Side Images</label>
-            <input
-              type="text"
-              name="imgCollection"
-              className="designEdit-form-imgCollection"
-              placeholder="https://image.png, https://image.jpg"
-            />
-          </article>
+          <section className="designEdit-form-row">
+            <article className="designEdit-form-art1-text-ctn">
+              <label htmlFor="art2-text">Article 1 Text</label>
+              <input
+                type="text"
+                name="art1-text"
+                className="designEdit-form-art1-text"
+                placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
+              />
+            </article>
+
+            <article className="designEdit-form-art1-img-ctn">
+              <label htmlFor="art1-img">Article 1 Img</label>
+              <input
+                type="text"
+                name="art1-img"
+                className="designEdit-form-art1-img"
+                placeholder="https://image.png"
+              />
+            </article>
+          </section>
+
+          <section className="designEdit-form-row">
+            <article className="designEdit-form-art2-text-ctn">
+              <label htmlFor="art2-text">Article 2 Text</label>
+              <input
+                type="text"
+                name="art2-text"
+                className="designEdit-form-art2-text"
+                placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
+              />
+            </article>
+
+            <article className="designEdit-form-art2-img-ctn">
+              <label htmlFor="art2-img">Article 2 Img</label>
+              <input
+                type="text"
+                name="art2-img"
+                className="designEdit-form-art2-img"
+                placeholder="https://image.png"
+              />
+            </article>
+          </section>
 
           <article id="designEdit-form-submitBtn-ctn">
             <button id="designEdit-form-submitBtn">Create Design</button>

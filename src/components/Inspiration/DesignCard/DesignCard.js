@@ -10,7 +10,7 @@ export default function DesignCard({ design }) {
         to={`/details/${design._id}`}
       >
         <article className="inspiration-collection-img">
-          <img src={design.mainImg} />
+          <img src={design.mainImg} alt="article-img" />
         </article>
         <h3 className="inspiration-collection-title">{design.title}</h3>
         <p className="inspiration-collection-text">{design.text}</p>

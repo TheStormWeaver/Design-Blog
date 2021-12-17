@@ -22,7 +22,16 @@
   color: #4a4ee1;
 }
 
+.inspiration-collection-img {
+  padding-bottom: 20px;
+}
+
 .inspiration-collection-img img {
   width: 380px;
   height: 220px;
+  object-fit: cover;
+}
+
+.inspiration-collection-text {
+  padding-top: 6px;
 }
