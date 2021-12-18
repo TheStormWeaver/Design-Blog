@@ -66,29 +66,7 @@ export default function DesignCreation() {
                 type="text"
                 name="title"
                 className="designCreation-form-title"
-                placeholder="Color theory 101"
-              />
-            </article>
-
-            <article className="designCreation-form-text-ctn">
-              <label htmlFor="text">Main Text</label>
-              <input
-                type="text"
-                name="text"
-                className="designCreation-form-text"
-                placeholder="A better way to use colors in any type of design."
-              />
-            </article>
-          </section>
-
-          <section className="designCreation-form-row">
-            <article className="designCreation-form-desc-ctn">
-              <label htmlFor="description">Main Description Text</label>
-              <input
-                type="text"
-                name="description"
-                className="designCreation-form-desc"
-                placeholder="Colors influence the meaning of text, how users move around a particular layout, and what they feel as they do so."
+                placeholder="Color theory"
               />
             </article>
 
@@ -99,6 +77,28 @@ export default function DesignCreation() {
                 name="mainImg"
                 className="designCreation-form-mainImg"
                 placeholder="https://image.png"
+              />
+            </article>
+          </section>
+
+          <section className="designCreation-form-row">
+            <article className="designCreation-form-text-ctn">
+              <label htmlFor="text">Introduction Text</label>
+              <textarea
+                type="text"
+                name="text"
+                className="designCreation-form-text"
+                placeholder="The importance of color theory and choosing colors"
+              />
+            </article>
+
+            <article className="designCreation-form-desc-ctn">
+              <label htmlFor="description">Main Description</label>
+              <textarea
+                type="text"
+                name="description"
+                className="designCreation-form-desc"
+                placeholder="Color theory is important because of its influence on design"
               />
             </article>
           </section>
@@ -115,18 +115,9 @@ export default function DesignCreation() {
               />
             </article>
 
-            <article className="designCreation-form-art1-text-ctn">
-              <label htmlFor="art1-text">First Article Text</label>
-              <input
-                type="text"
-                name="art1-text"
-                className="designCreation-form-art1-text"
-                placeholder="Different colors mean different emotions"
-              />
-            </article>
-
+            
             <article className="designCreation-form-art1-img-ctn">
-              <label htmlFor="art1-img">First Article Img</label>
+              <label htmlFor="art1-img">First Article Image</label>
               <input
                 type="text"
                 name="art1-img"
@@ -134,6 +125,17 @@ export default function DesignCreation() {
                 placeholder="https://image.png"
               />
             </article>
+
+            <article className="designCreation-form-art1-text-ctn">
+              <label htmlFor="art1-text">First Article Text</label>
+              <textarea
+                type="text"
+                name="art1-text"
+                className="designCreation-form-art1-text"
+                placeholder="Different colors mean different emotions"
+              />
+            </article>
+
           </section>
 
           <section className="designCreation-form-row">
@@ -148,23 +150,23 @@ export default function DesignCreation() {
               />
             </article>
 
-            <article className="designCreation-form-art2-text-ctn">
-              <label htmlFor="art2-text">Second Article Text</label>
-              <input
-                type="text"
-                name="art2-text"
-                className="designCreation-form-art2-text"
-                placeholder="The choice of colors comes from the direction of the design"
-              />
-            </article>
-
             <article className="designCreation-form-art2-img-ctn">
-              <label htmlFor="art2-img">Second Article Img</label>
+              <label htmlFor="art2-img">Second Article Image</label>
               <input
                 type="text"
                 name="art2-img"
                 className="designCreation-form-art2-img"
                 placeholder="https://image.png"
+              />
+            </article>
+
+            <article className="designCreation-form-art2-text-ctn">
+              <label htmlFor="art2-text">Second Article Text</label>
+              <textarea
+                type="text"
+                name="art2-text"
+                className="designCreation-form-art2-text"
+                placeholder="The choice of colors comes from the direction of the design"
               />
             </article>
           </section>

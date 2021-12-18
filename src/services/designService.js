@@ -33,7 +33,20 @@ export async function CreateDesign(designData, token) {
   return result;
 }
 
-export async function Del(designId, token) {
+export async function UpdateDesign (designId, designData, token) {
+  let response = await fetch(`${baseUrl}/design/${designId}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      "X-Authorization": token,
+    },
+    body: JSON.stringify(designData),
+  });
+  let result = await response.json();
+  return result
+};
+
+export async function DelDesign(designId, token) {
   let response = await fetch(`${baseUrl}/pets/${designId}`, {
     method: "DELETE",
     headers: {

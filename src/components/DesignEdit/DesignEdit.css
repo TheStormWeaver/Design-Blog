@@ -31,6 +31,19 @@
   margin-bottom: 10px;
 }
 
+.designEdit-card textarea {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 19px;
+  width: 100%;
+  height: 70px;
+}
+
+.designEdit-card textarea::-webkit-scrollbar {
+  display: none;
+}
+
 .firstArticle-title,
 .secondArticle-title {
   width: 100%;

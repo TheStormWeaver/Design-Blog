@@ -53,6 +53,19 @@
   margin-bottom: 27px;
 }
 
+.designCreation-card textarea {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 19px;
+  width: 100%;
+  height: 70px;
+}
+
+.designCreation-card textarea::-webkit-scrollbar {
+  display: none;
+}
+
 .designCreation-form label {
   display: block;
   width: 100%;
