@@ -17,7 +17,7 @@ export default function DesignEdit() {
       <article className="designEdit-card">
         <h2 className="designEdit-title">Edit your design</h2>
         <form className="designEdit-form">
-        <section className="designEdit-form-row">
+          <section className="designEdit-form-row">
             <article className="designEdit-form-title-ctn">
               <label htmlFor="title">Title</label>
               <input
@@ -62,6 +62,17 @@ export default function DesignEdit() {
           </section>
 
           <section className="designEdit-form-row">
+            <h3 className="firstArticle-title">First Article Content</h3>
+            <article className="designEdit-form-art1-title-ctn">
+              <label htmlFor="art1-title">First Article Title</label>
+              <input
+                type="text"
+                name="art1-title"
+                className="designEdit-form-art1-title"
+                placeholder="Good practices in color theory"
+              />
+            </article>
+
             <article className="designEdit-form-art1-text-ctn">
               <label htmlFor="art2-text">Article 1 Text</label>
               <input
@@ -84,6 +95,17 @@ export default function DesignEdit() {
           </section>
 
           <section className="designEdit-form-row">
+            <h3 className="secondArticle-title">Second Article Content</h3>
+            <article className="designEdit-form-art2-title-ctn">
+              <label htmlFor="art2-title">Second Article Title</label>
+              <input
+                type="text"
+                name="art2-title"
+                className="designEdit-form-art2-title"
+                placeholder="New way to use colors"
+              />
+            </article>
+
             <article className="designEdit-form-art2-text-ctn">
               <label htmlFor="art2-text">Article 2 Text</label>
               <input

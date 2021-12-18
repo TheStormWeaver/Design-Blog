@@ -16,6 +16,7 @@ import Inspiration from "./components/Inspiration/Inspiration";
 import DesignCreation from "./components/DesignCreation/DesignCreation";
 import DesignEdit from "./components/DesignEdit/DesignEdit";
 import DesignDetails from "./components/DesignDetails/DesignDetails";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const [user, setUser] = useLocalStorage("user", {
@@ -51,6 +52,7 @@ function App() {
           <Route path="/create" element={<DesignCreation />}></Route>
           <Route path="/details/:designId" element={<DesignDetails />}></Route>
           <Route path="/edit/:designId" element={<DesignEdit />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
 
         <Footer />

@@ -1,0 +1,44 @@
+.notFound-page {
+  min-height: 90vh;
+  background-image: url("../../assets/violet-galaxy.jpg");
+}
+
+.notFound-page-container {
+  text-align: center;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.notFound-page-title {
+  font-size: 200px;
+  font-weight: 900;
+  line-height: 210px;
+  text-shadow: 4px 4px 0px #e4bcff;
+}
+
+.notFound-page-subtitle {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.notFound-page-text {
+  font-size: 25px;
+  padding: 0 12%;
+}
+
+.notFound-page-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 0px 30px rgb(255 255 255 / 70%) inset;
+    z-index: -1;
+}
