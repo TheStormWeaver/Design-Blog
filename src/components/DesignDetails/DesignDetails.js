@@ -5,6 +5,7 @@ import "./DesignDetails.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { getOneDesign } from "../../services/designService";
+import { Like } from "../../services/designService";
 
 export default function DesignDetails() {
   const navigate = useNavigate();
@@ -15,6 +16,48 @@ export default function DesignDetails() {
   useEffect(() => {
     getOneDesign(designId).then((result) => setDesign(result));
   }, [designId]);
+
+  const likeButtonClick = () => {
+    if (design.likes.includes(user._id)) {
+      console.log("User already liked");
+      return;
+    }
+
+    let likes = [...design.likes, user._id];
+    let likedDesign = { ...design, likes };
+
+    Like(design._id, likedDesign, user.accessToken).then((resData) => {
+      console.log(resData);
+      setDesign((state) => ({
+        ...state,
+        likes,
+      }));
+    });
+  };
+
+  const ownerButtons = (
+    <>
+      <Link
+        className="designDetails-content-buttons-edit"
+        to={`/edit/${design._id}`}
+      >
+        Edit
+      </Link>
+      <Link className="designDetails-content-buttons-delete" to="">
+        Delete
+      </Link>
+    </>
+  );
+
+  const userButtons = (
+    <button
+      className="designDetails-content-buttons-like"
+      onClick={likeButtonClick}
+    >
+      <i className="fas fa-heart"></i>
+      Like
+    </button>
+  );
 
   return (
     <section className="designDetails-page">
@@ -36,7 +79,9 @@ export default function DesignDetails() {
         </article>
 
         <article className="designDetails-content-art1">
-          <h3 className="designDetails-content-art1Title">{design.art1Title}</h3>
+          <h3 className="designDetails-content-art1Title">
+            {design.art1Title}
+          </h3>
           <p className="designDetails-content-art1Text">{design.art1Text}</p>
           <article className="designDetails-content-art1Img">
             <img src={design.art1Img} alt="design-first-img" />
@@ -44,12 +89,27 @@ export default function DesignDetails() {
         </article>
 
         <article className="designDetails-content-art2">
-        <h3 className="designDetails-content-art2Title">{design.art2Title}</h3>
+          <h3 className="designDetails-content-art2Title">
+            {design.art2Title}
+          </h3>
           <p className="designDetails-content-art2Text">{design.art2Text}</p>
           <article className="designDetails-content-art2Img">
             <img src={design.art2Img} alt="design-second-img" />
           </article>
         </article>
+
+        <section className="designDetails-content-actions">
+          <article className="designDetails-content-buttons">
+            {user._id &&
+              (user._id === design._ownerId ? ownerButtons : userButtons)}
+          </article>
+
+          <article className="designDetails-content-likes">
+            <p className="designDetails-content-likes-total">
+              <i className="fas fa-heart"></i> {design.likes?.length}
+            </p>
+          </article>
+        </section>
       </article>
     </section>
   );

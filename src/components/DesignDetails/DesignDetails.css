@@ -24,11 +24,36 @@
 
 .designDetails-content-art1Title,
 .designDetails-content-art2Title {
-    font-size: 38px;
-    padding-top: 25px;
+  font-size: 38px;
+  padding-top: 25px;
 }
 
 .designDetails-content-art1Text,
 .designDetails-content-art2Text {
-    padding: 20px 0;
+  padding: 20px 0;
+}
+
+.designDetails-content-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 10px 0;
+}
+
+.designDetails-content-buttons-like {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 20px;
+}
+
+.designDetails-content-buttons-like i {
+  padding-right: 10px;
+}
+
+.designDetails-content-buttons-edit,
+.designDetails-content-buttons-delete {
+  text-decoration: none;
+  color: black;
+  padding-right: 30px;
 }
