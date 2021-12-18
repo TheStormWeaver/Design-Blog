@@ -55,9 +55,25 @@
   padding-right: 10px;
 }
 
+.designDetails-content-buttons-edit{
+  background-color: #1a2a5e;
+  margin-right: 26px;
+}
+
+.designDetails-content-buttons-delete {
+  background-color: #494682;
+}
+
 .designDetails-content-buttons-edit,
 .designDetails-content-buttons-delete {
   text-decoration: none;
-  color: black;
-  padding-right: 30px;
+  color: white;
+  padding: 4px 34px;
+  border-radius: 10px;
+}
+
+.designDetails-content-buttons-edit:hover,
+.designDetails-content-buttons-delete:hover {
+  background-color: #15085e;
+  color: white;
 }

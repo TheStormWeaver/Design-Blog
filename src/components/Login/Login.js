@@ -11,6 +11,7 @@ import "./Login.css";
 export default function Login() {
   const [errors, setErrors] = useState({ emailTxt: null, passTxt: null });
   const [showError, setShowError] = useState(false);
+  const [text, setText] = useState("");
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -24,6 +25,7 @@ export default function Login() {
 
     authService.Login(email, password).then((data) => {
       if (data == "403") {
+        setText("Username or password don't match");
         setShowError(true);
       } else {
         loginUser(data);
@@ -32,9 +34,7 @@ export default function Login() {
     });
   }
 
-  const onClose = (e) => {
-    e.preventDefault();
-
+  const onClose = () => {
     setShowError(false);
   };
 
@@ -66,7 +66,7 @@ export default function Login() {
 
   return (
     <section className="login-card-container">
-      <ErrorModal show={showError} onClose={onClose} message={"Username or password don't match"}/>
+      <ErrorModal show={showError} onClose={onClose} message={text} />
 
       <article className="login-card">
         <h2 className="login-title">Login</h2>

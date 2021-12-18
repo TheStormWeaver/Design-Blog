@@ -15,6 +15,7 @@ export default function Register() {
     rePassTxt: null,
   });
   const [showError, setShowError] = useState(false);
+  const [text, setText] = useState("");
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
   let isCorrect = true;
@@ -39,6 +40,7 @@ export default function Register() {
     if (isCorrect) {
       authService.Register(email, password).then((data) => {
         if (data == "409") {
+          setText("User already exists")
           setShowError(true);
         } else if (data == "400") {
           throw data;
@@ -50,9 +52,7 @@ export default function Register() {
     }
   }
 
-  const onClose = (e) => {
-    e.preventDefault();
-
+  const onClose = () => {
     setShowError(false);
   };
 
@@ -95,7 +95,7 @@ export default function Register() {
       <ErrorModal
         show={showError}
         onClose={onClose}
-        message={"User already exists"}
+        message={text}
       />
       <article className="register-card">
         <form className="register-form" onSubmit={onRegister} method="POST">

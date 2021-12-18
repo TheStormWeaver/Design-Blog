@@ -47,7 +47,7 @@ export async function UpdateDesign (designId, designData, token) {
 };
 
 export async function DelDesign(designId, token) {
-  let response = await fetch(`${baseUrl}/pets/${designId}`, {
+  let response = await fetch(`${baseUrl}/design/${designId}`, {
     method: "DELETE",
     headers: {
       "X-Authorization": token,

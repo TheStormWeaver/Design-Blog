@@ -2,16 +2,18 @@ import { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import "./DesignDetails.css";
+import ConfirmModal from "../Common/ConfirmModal";
 
 import { AuthContext } from "../../contexts/AuthContext";
-import { getOneDesign } from "../../services/designService";
-import { Like } from "../../services/designService";
+import { DelDesign, getOneDesign, Like } from "../../services/designService";
 
 export default function DesignDetails() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [design, setDesign] = useState({});
   const { designId } = useParams();
+  const [ text, setText ] = useState("");
+  const [showDialogue, setShowDialogue] = useState(false);
 
   useEffect(() => {
     getOneDesign(designId).then((result) => setDesign(result));
@@ -19,7 +21,8 @@ export default function DesignDetails() {
 
   const likeButtonClick = () => {
     if (design.likes.includes(user._id)) {
-      console.log("User already liked");
+      setText("User already liked");
+      setShowDialogue(true)
       return;
     }
 
@@ -27,12 +30,32 @@ export default function DesignDetails() {
     let likedDesign = { ...design, likes };
 
     Like(design._id, likedDesign, user.accessToken).then((resData) => {
-      console.log(resData);
       setDesign((state) => ({
         ...state,
         likes,
       }));
     });
+  };
+
+  const onDelete = (e) => {
+    e.preventDefault();
+
+    DelDesign(designId, user.accessToken)
+      .then(() => {
+        navigate("/inspiration");
+      })
+      .finally(setShowDialogue(false));
+  };
+
+  const deleteClickHandler = (e) => {
+    e.preventDefault();
+
+    setText("Are you sure you want to delete this design?");
+    setShowDialogue(true);
+  };
+
+  const onClose = () => {
+    setShowDialogue(false);
   };
 
   const ownerButtons = (
@@ -43,7 +66,11 @@ export default function DesignDetails() {
       >
         Edit
       </Link>
-      <Link className="designDetails-content-buttons-delete" to="">
+      <Link
+        className="designDetails-content-buttons-delete"
+        to=""
+        onClick={deleteClickHandler}
+      >
         Delete
       </Link>
     </>
@@ -61,6 +88,12 @@ export default function DesignDetails() {
 
   return (
     <section className="designDetails-page">
+      <ConfirmModal
+        show={showDialogue}
+        onClose={onClose}
+        onSave={onDelete}
+        message={text}
+      />
       <article className="designDetails-content">
         <article className="design-main-content">
           <h3 className="designDetails-content-title">{design.title}</h3>

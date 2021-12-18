@@ -4,7 +4,7 @@ export default function ErrorModal({ show, onClose, message }) {
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Authentication Error</Modal.Title>
+        <Modal.Title>Error</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>{message}</Modal.Body>
