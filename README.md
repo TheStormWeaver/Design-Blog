@@ -21,7 +21,7 @@ Authorized (Logged in) users have access to:
 - Create design page, in which they can create designs
 - Have the ability to edit designs that they have created (todo)
 - Have the ability to delete designs that they have created (todo)
-- Can like other people's designs (todo)
+- Can like other people's designs
 - Can access their own profile page, edit their profile picture and view all designs posted by them (todo)
 
 
