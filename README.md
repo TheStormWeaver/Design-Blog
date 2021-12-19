@@ -19,8 +19,8 @@ Unauthorized (not logged in) users have access to:
 Authorized (Logged in) users have access to:
 - The logout page
 - Create design page, in which they can create designs
-- Have the ability to edit designs that they have created (todo)
-- Have the ability to delete designs that they have created (todo)
+- Have the ability to edit designs that they have created
+- Have the ability to delete designs that they have created
 - Can like other people's designs
 - Can access their own profile page, edit their profile picture and view all designs posted by them (todo)
 
