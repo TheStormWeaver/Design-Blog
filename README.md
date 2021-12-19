@@ -28,8 +28,6 @@ Authorized (Logged in) users have access to:
 
 # Running the project
 1. Clone this repo or save it as a zip
-2. Enter the directory of the project in a ide of choice
-3. Run "npm install"
-4. Enter the directory of the "server" folder
-5. Run the command "node server.js" inside of the server directory in the CMD
-6. Run the command "npm start" and use the app
+2. Enter the directory of the project in a ide of choice & run "npm install"
+3. Enter the "server" folder, then run CMD in the "server" folder and type in the command "node server.js"
+4. Run the command "npm start" and use the app
