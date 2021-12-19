@@ -26,9 +26,13 @@ function App() {
     _id: "",
     email: "",
     accessToken: "",
+    photoUrl: "",
+    displayName: "",
+    number: "",
   });
 
   const loginUser = (authData) => {
+    console.log(authData);
     setUser(authData);
   };
 
@@ -37,6 +41,9 @@ function App() {
       _id: "",
       email: "",
       accessToken: "",
+      photoUrl: "",
+      displayName: "",
+      number: "",
     });
   }
 

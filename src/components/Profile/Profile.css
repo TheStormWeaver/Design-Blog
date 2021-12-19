@@ -12,12 +12,26 @@
 .profile-card {
   background-color: rgba(0,0,0, 0.8);
   color: white;
-  padding: 20px 40px 45px 50px;
+  padding: 60px 40px 45px 50px;
   width: 800px;
   border-radius: 12px;
   text-align: center;
 }
 
 .profile-card-text {
-  font-size: 30px;
+  font-size: 25px;
+  padding: 15px 0;
+}
+
+.profile-card-image img {
+  max-width: 450px;
+  max-height: 450px;
+}
+
+.profile-card-button {
+  border: none;
+  border-radius: 22px;
+  background-color: #611ace;
+  color: white;
+  padding: 10px 30px;
 }
