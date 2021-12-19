@@ -16,10 +16,6 @@ export default function DesignEdit() {
     getOneDesign(designId).then((result) => setDesign(result));
   }, [designId]);
 
-  if (!user.email) {
-    return <Navigate to="/login" />;
-  }
-
   function onDesignEdit(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);

@@ -1,0 +1,23 @@
+.profile-page {
+  background-image: url("../../assets/abstract.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0px;
+  min-height: 860px;
+}
+
+.profile-card {
+  background-color: rgba(0,0,0, 0.8);
+  color: white;
+  padding: 20px 40px 45px 50px;
+  width: 800px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.profile-card-text {
+  font-size: 30px;
+}

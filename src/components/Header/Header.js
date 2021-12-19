@@ -14,6 +14,10 @@ export default function Header() {
       </li>
 
       <li className="navbar-list-item">
+        <Link to="/profile">Profile</Link>
+      </li>
+
+      <li className="navbar-list-item">
         <Link to="/logout">Logout</Link>
       </li>
     </>

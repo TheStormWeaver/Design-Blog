@@ -18,18 +18,18 @@ export default function Inspiration() {
   const emptyPage = (
     <article className="empty">
       <article className="empty-img">
-        <img
-          src="./icons/empty-gallery.png"
-          alt="Missing Design"
-        />
+        <img src="./icons/empty-gallery.png" alt="Missing Design" />
       </article>
       <p className="empty-title">Looks like there are no designs.</p>
-      <p className="empty-text">Be the first one to create an design and showcase it</p>
+      <p className="empty-text">
+        Be the first one to create an design and showcase it
+      </p>
       <Link className="empty-link" to="/create">
         Create Designs
       </Link>
     </article>
   );
+  
   const designCollection =
     designs.length > 0
       ? designs.map((design) => <DesignCard key={design._id} design={design} />)

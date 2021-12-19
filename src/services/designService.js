@@ -33,7 +33,7 @@ export async function CreateDesign(designData, token) {
   return result;
 }
 
-export async function UpdateDesign (designId, designData, token) {
+export async function UpdateDesign(designId, designData, token) {
   let response = await fetch(`${baseUrl}/design/${designId}`, {
     method: "PUT",
     headers: {
@@ -43,8 +43,8 @@ export async function UpdateDesign (designId, designData, token) {
     body: JSON.stringify(designData),
   });
   let result = await response.json();
-  return result
-};
+  return result;
+}
 
 export async function DelDesign(designId, token) {
   let response = await fetch(`${baseUrl}/design/${designId}`, {

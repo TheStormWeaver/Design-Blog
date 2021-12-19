@@ -10,10 +10,6 @@ export default function DesignCreation() {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  if (!user.email) {
-    return <Navigate to="/login" />;
-  }
-
   function onDesignCreate(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
