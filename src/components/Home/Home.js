@@ -23,7 +23,7 @@ export default function Home() {
 
       <section className="designer-banner">
         <article className="designer-banner-img">
-          <img src="./images/designer.jpg" alt="designer" />
+          <img src="./images/designer.png" alt="designer" />
         </article>
 
         <article className="designer-banner-text">

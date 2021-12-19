@@ -40,7 +40,7 @@ export default function About() {
         </article>
 
         <article className="ourWork-banner-img">
-          <img src="./images/digital-designers.jpg" alt="design" />
+          <img src="./images/digital-designers.png" alt="design" />
         </article>
       </section>
 
@@ -84,7 +84,7 @@ export default function About() {
 
       <section className="beliefs-banner">
         <article className="beliefs-banner-img">
-          <img src="./images/monitor.jpg" alt="design" />
+          <img src="./images/monitor.png" alt="design" />
         </article>
 
         <article className="beliefs-banner-text">

@@ -77,6 +77,10 @@
   padding: 0 15%;
 }
 
+.art-banner-img {
+  width: 250%;
+}
+
 .art-banner-img img {
   width: 125%;
 }
