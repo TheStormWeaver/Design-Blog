@@ -23,7 +23,7 @@ Authorized (Logged in) users have access to:
 - Have the ability to edit designs that they have created
 - Have the ability to delete designs that they have created
 - Can like other people's designs
-- Can access their own profile page, in which they can edit their profile picture, display name and phone number (todo)
+- Can access their own profile page, in which they can edit their profile picture, display name and phone number (work in progress)
 
 
 # Running the project
