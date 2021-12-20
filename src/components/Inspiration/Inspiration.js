@@ -29,7 +29,7 @@ export default function Inspiration() {
       </Link>
     </article>
   );
-  
+
   const designCollection =
     designs.length > 0
       ? designs.map((design) => <DesignCard key={design._id} design={design} />)

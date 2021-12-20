@@ -171,7 +171,7 @@ export default function DesignEdit() {
           </section>
 
           <article id="designEdit-form-submitBtn-ctn">
-            <button id="designEdit-form-submitBtn">Create Design</button>
+            <button id="designEdit-form-submitBtn">Save Changes</button>
           </article>
         </form>
       </article>

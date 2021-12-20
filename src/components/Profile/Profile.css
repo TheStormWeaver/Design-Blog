@@ -1,5 +1,5 @@
 .profile-page {
-  background-image: url("../../assets/abstract.jpg");
+  background-image: url("../../assets/abstract.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -10,10 +10,10 @@
 }
 
 .profile-card {
-  background-color: rgba(0,0,0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 60px 40px 45px 50px;
-  width: 800px;
+  padding: 60px 80px 45px 100px;
+  width: 900px;
   border-radius: 12px;
   text-align: center;
 }
@@ -23,9 +23,17 @@
   padding: 15px 0;
 }
 
+.profile-card-image {
+  text-align: center;
+}
+
 .profile-card-image img {
   max-width: 450px;
   max-height: 450px;
+}
+
+.profile-card-text-bio-ctn {
+  text-align: left;
 }
 
 .profile-card-button {
@@ -34,4 +42,10 @@
   background-color: #611ace;
   color: white;
   padding: 10px 30px;
+  width: 30%;
+  height: 9%;
+}
+
+.profile-card-text article {
+  padding-bottom: 20px;
 }

@@ -16,6 +16,7 @@ import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import Inspiration from "./components/Inspiration/Inspiration";
 import Profile from "./components/Profile/Profile";
+import ProfileEdit from "./components/Profile/ProfileEdit/ProfileEdit.js";
 import DesignCreation from "./components/DesignCreation/DesignCreation";
 import DesignEdit from "./components/DesignEdit/DesignEdit";
 import DesignDetails from "./components/DesignDetails/DesignDetails";
@@ -26,15 +27,18 @@ function App() {
     _id: "",
     email: "",
     accessToken: "",
-    photoUrl: "",
+    photo: "",
     displayName: "",
-    number: "",
+    bio: "",
   });
 
   const loginUser = (authData) => {
-    console.log(authData);
-    setUser(authData);
+    setUser({...authData});
   };
+
+  const updateProfileData = (profileData) => {
+    setUser({...user, ...profileData});
+  }
 
   function logoutUser() {
     setUser({
@@ -43,12 +47,12 @@ function App() {
       accessToken: "",
       photoUrl: "",
       displayName: "",
-      number: "",
+      bio: "",
     });
   }
 
   return (
-    <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
+    <AuthContext.Provider value={{ user, loginUser, logoutUser, updateProfileData }}>
       <div className="App">
         <Header />
 
@@ -67,6 +71,7 @@ function App() {
 
           <Route element={<AuthGuard />}>
             <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/profile-edit" element={<ProfileEdit />}></Route>
             <Route path="/logout" element={<Logout />}></Route>
             <Route path="/create" element={<DesignCreation />}></Route>
             <Route path="/edit/:designId" element={<DesignEdit />}></Route>

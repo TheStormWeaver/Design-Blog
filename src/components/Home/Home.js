@@ -51,14 +51,14 @@ export default function Home() {
           <article className="color-banner-icon">
             <img src="./icons/book.png" alt="design" />
           </article>
-          <h2 className="color-banner-title">Collection</h2>
+          <h2 className="color-banner-title">Inspiration</h2>
         </article>
 
         <article className="color-banner-ctn">
           <article className="color-banner-icon">
             <img src="./icons/communication.png" alt="design" />
           </article>
-          <h2 className="color-banner-title">Communication</h2>
+          <h2 className="color-banner-title">Feedback</h2>
         </article>
       </section>
 

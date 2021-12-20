@@ -8,7 +8,7 @@ export default function ConfirmModal({ show, onClose, onSave, message }) {
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Confirmation Check</Modal.Title>
+        <Modal.Title>Notification</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>{message}</Modal.Body>

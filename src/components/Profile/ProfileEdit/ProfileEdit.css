@@ -1,0 +1,29 @@
+.profile-edit-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  min-height: 860px;
+  background-image: url("../../../assets/abstract.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-edit-card {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 60px 40px 45px 50px;
+  width: 800px;
+  border-radius: 12px;
+}
+
+.profile-edit-title {
+    padding-bottom: 40px;
+}
+
+.profile-edit-form article {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}

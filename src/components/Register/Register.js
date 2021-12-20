@@ -18,7 +18,7 @@ export default function Register() {
   const [text, setText] = useState("");
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  let isCorrect = true;
+  const [isCorrect, setIsCorrect] = useState(true);
 
   function onRegister(e) {
     e.preventDefault();
@@ -34,13 +34,13 @@ export default function Register() {
         ...state,
         rePassTxt: "Passwords do not match",
       }));
-      isCorrect = false;
+      return;
     }
-    
+
     if (isCorrect) {
       authService.Register(email, password).then((data) => {
         if (data == "409") {
-          setText("User already exists")
+          setText("User already exists");
           setShowError(true);
         } else if (data == "400") {
           throw data;
@@ -62,15 +62,19 @@ export default function Register() {
 
     switch (name) {
       case "email":
-        emailRegex.test(value)
-          ? setErrors((state) => ({ ...state, emailTxt: false }))
-          : setErrors((state) => ({
-              ...state,
-              emailTxt: "Email address is invalid",
-            }));
+        if (emailRegex.test(value)) {
+          setErrors((state) => ({ ...state, emailTxt: false }));
+          setIsCorrect(true);
+        } else {
+          setErrors((state) => ({
+            ...state,
+            emailTxt: "Email address is invalid",
+          }));
+          setIsCorrect(false);
+        }
         break;
       case "password":
-        value.length < 1
+        !value
           ? setErrors((state) => ({
               ...state,
               passTxt: "Password is required",
@@ -78,7 +82,7 @@ export default function Register() {
           : setErrors((state) => ({ ...state, passTxt: false }));
         break;
       case "rePassword":
-        value < 1
+        !value
           ? setErrors((state) => ({
               ...state,
               rePassTxt: "Repeat password is required",
@@ -92,11 +96,7 @@ export default function Register() {
 
   return (
     <section id="register-card-container">
-      <ErrorModal
-        show={showError}
-        onClose={onClose}
-        message={text}
-      />
+      <ErrorModal show={showError} onClose={onClose} message={text} />
       <article className="register-card">
         <form className="register-form" onSubmit={onRegister} method="POST">
           <h2 className="register-form-title">Register</h2>
