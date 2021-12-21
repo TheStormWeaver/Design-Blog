@@ -105,7 +105,7 @@ export default function DesignEdit() {
           </section>
 
           <section className="designEdit-form-row">
-            <h3 className="firstArticle-title">First Article Content</h3>
+            <h3 className="firstArticle-title">First Article Content (Optional)</h3>
             <article className="designEdit-form-art1-title-ctn">
               <label htmlFor="art1-title">First Article Title</label>
               <input
@@ -138,7 +138,7 @@ export default function DesignEdit() {
           </section>
 
           <section className="designEdit-form-row">
-            <h3 className="secondArticle-title">Second Article Content</h3>
+            <h3 className="secondArticle-title">Second Article Content (Optional)</h3>
             <article className="designEdit-form-art2-title-ctn">
               <label htmlFor="art2-title">Second Article Title</label>
               <input

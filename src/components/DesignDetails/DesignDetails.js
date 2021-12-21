@@ -112,21 +112,21 @@ export default function DesignDetails() {
         </article>
 
         <article className="designDetails-content-art1">
-          <h3 className="designDetails-content-art1Title">
+          <h3 className="designDetails-content-art1Title" id={design.art1Title ? "" : "hidden"}>
             {design.art1Title}
           </h3>
-          <p className="designDetails-content-art1Text">{design.art1Text}</p>
-          <article className="designDetails-content-art1Img">
+          <p className="designDetails-content-art1Text" id={design.art1Text ? "" : "hidden"}>{design.art1Text}</p>
+          <article className="designDetails-content-art1Img" id={design.art1Img ? "" : "hidden"}>
             <img src={design.art1Img} alt="design-first-img" />
           </article>
         </article>
 
         <article className="designDetails-content-art2">
-          <h3 className="designDetails-content-art2Title">
+          <h3 className="designDetails-content-art2Title" id={design.art2Title ? "" : "hidden"}>
             {design.art2Title}
           </h3>
-          <p className="designDetails-content-art2Text">{design.art2Text}</p>
-          <article className="designDetails-content-art2Img">
+          <p className="designDetails-content-art2Text" id={design.art2Text ? "" : "hidden"}>{design.art2Text}</p>
+          <article className="designDetails-content-art2Img" id={design.art2Img ? "" : "hidden"}>
             <img src={design.art2Img} alt="design-second-img" />
           </article>
         </article>

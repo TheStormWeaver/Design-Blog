@@ -85,6 +85,10 @@
   outline: none;
 }
 
+.designCreation-form textarea:focus {
+  outline: none;
+}
+
 #designCreation-form-submitBtn-ctn {
   text-align: center;
   padding-top: 20px;
