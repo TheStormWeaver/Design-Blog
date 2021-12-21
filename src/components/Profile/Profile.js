@@ -26,7 +26,7 @@ export default function Profile() {
           )}
         </article>
 
-        <section className="profile-card-text">
+        <article className="profile-card-text">
           <article className="profile-card-text-name-ctn">
             <p className="profile-card-text-name">{user.displayName}</p>
           </article>
@@ -38,7 +38,7 @@ export default function Profile() {
           <article className="profile-card-text-bio-ctn">
             <p className="profile-card-text-bio">{user.bio}</p>
           </article>
-        </section>
+        </article>
 
         <button className="profile-card-button" onClick={onProfileChangeClick}>
           Change Info

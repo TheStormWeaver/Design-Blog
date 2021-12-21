@@ -33,12 +33,12 @@ function App() {
   });
 
   const loginUser = (authData) => {
-    setUser({...authData});
+    setUser({ ...authData });
   };
 
   const updateProfileData = (profileData) => {
-    setUser({...user, ...profileData});
-  }
+    setUser({ ...user, ...profileData });
+  };
 
   function logoutUser() {
     setUser({
@@ -52,7 +52,9 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={{ user, loginUser, logoutUser, updateProfileData }}>
+    <AuthContext.Provider
+      value={{ user, loginUser, logoutUser, updateProfileData }}
+    >
       <div className="App">
         <Header />
 
@@ -63,7 +65,7 @@ function App() {
           <Route path="/inspiration" element={<Inspiration />}></Route>
           <Route path="/details/:designId" element={<DesignDetails />}></Route>
           <Route path="*" element={<NotFound />}></Route>
-          
+
           <Route element={<UnAuthGuard />}>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/login" element={<Login />}></Route>

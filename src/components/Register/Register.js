@@ -15,10 +15,10 @@ export default function Register() {
     rePassTxt: null,
   });
   const [showError, setShowError] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(true);
   const [text, setText] = useState("");
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [isCorrect, setIsCorrect] = useState(true);
 
   function onRegister(e) {
     e.preventDefault();

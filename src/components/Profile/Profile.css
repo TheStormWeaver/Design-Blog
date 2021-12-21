@@ -1,51 +1,52 @@
 .profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  min-height: 860px;
   background-image: url("../../assets/abstract.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  padding: 40px 0px;
-  min-height: 860px;
 }
 
 .profile-card {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 60px 80px 45px 100px;
-  width: 900px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 45px;
+  width: 650px;
   border-radius: 12px;
   text-align: center;
 }
 
 .profile-card-text {
-  font-size: 25px;
   padding: 15px 0;
 }
 
-.profile-card-image {
-  text-align: center;
+.profile-card-text-name {
+  font-size: 36px;
+  color: #611ace;
+}
+
+.profile-card-text-email {
+  font-size: 20px;
+  padding-bottom: 11px;
 }
 
 .profile-card-image img {
-  max-width: 450px;
-  max-height: 450px;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 50%;
 }
 
 .profile-card-text-bio-ctn {
-  text-align: left;
+  font-size: 20px;
 }
 
 .profile-card-button {
   border: none;
-  border-radius: 22px;
+  border-radius: 24px;
   background-color: #611ace;
   color: white;
-  padding: 10px 30px;
-  width: 30%;
-  height: 9%;
-}
-
-.profile-card-text article {
-  padding-bottom: 20px;
+  padding: 15px 50px;
 }

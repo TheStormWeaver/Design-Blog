@@ -11,19 +11,62 @@
 }
 
 .profile-edit-card {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 60px 40px 45px 50px;
-  width: 800px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 45px;
+  width: 650px;
   border-radius: 12px;
 }
 
 .profile-edit-title {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  color: #611ace;
+}
+
+.profile-edit-form-save {
+  border: none;
+  border-radius: 24px;
+  background-color: #611ace;
+  color: white;
+  padding: 15px 50px;
+}
+
+.profile-edit-form-save-ctn {
+  text-align: center;
+}
+
+.profile-edit-form textarea::-webkit-scrollbar {
+  display: none;
 }
 
 .profile-edit-form article {
   display: flex;
   flex-direction: column;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+}
+
+.profile-edit-form label {
+  padding-bottom: 11px;
+  font-size: 18px;
+  color: #611ace;
+}
+
+.profile-edit-form input {
+  background: transparent;
+  font-size: 20px;
+  color: black;
+  line-height: 1.2;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.profile-edit-form textarea {
+  background: transparent;
+  font-size: 18px;
+  color: black;
+  line-height: 1.2;
+  border: none;
+  border-bottom: 1px solid black;
+  min-height: 100px;
 }

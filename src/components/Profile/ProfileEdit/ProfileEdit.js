@@ -43,7 +43,7 @@ export default function ProfileEdit() {
           </article>
 
           <article className="profile-edit-form-displayName-ctn">
-          <label htmlFor="displayName">Display Name</label>
+            <label htmlFor="displayName">Display Name</label>
             <input
               className="profile-edit-form-displayName"
               type="text"
@@ -53,15 +53,18 @@ export default function ProfileEdit() {
           </article>
 
           <article className="profile-edit-form-profileNumber-ctn">
-          <label htmlFor="bio">Short Intro</label>
-            <input
+            <label htmlFor="bio">About Me</label>
+            <textarea
               className="profile-edit-form-number"
               type="text"
               name="bio"
               defaultValue={user.bio}
             />
           </article>
-          <button>Save</button>
+
+          <section className="profile-edit-form-save-ctn">
+            <button className="profile-edit-form-save">Save</button>
+          </section>
         </form>
       </article>
     </section>
