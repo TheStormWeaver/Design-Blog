@@ -7,10 +7,17 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { getOneDesign, UpdateDesign } from "../../services/designService";
 
 export default function DesignEdit() {
-  const navigate = useNavigate();
+  const [errors, setErrors] = useState({
+    titleTxt: null,
+    textTxt: null,
+    mainImgTxt: null,
+    descTxt: null,
+  });
+  const [isCorrect, setIsCorrect] = useState(true);
   const { designId } = useParams();
   const [design, setDesign] = useState({});
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getOneDesign(designId).then((result) => setDesign(result));
@@ -31,28 +38,86 @@ export default function DesignEdit() {
     let art2Text = formData.get("art2-text");
     let art2Img = formData.get("art2-img");
 
-    UpdateDesign(
-      design._id,
-      {
-        title,
-        text,
-        description,
-        mainImg,
-        art1Title,
-        art1Text,
-        art1Img,
-        art2Title,
-        art2Text,
-        art2Img,
-        likes: design.likes,
-        _ownerId: user._id,
-        _ownerName: user.email,
-        _id: design._id,
-      },
-      user.accessToken
-    ).then(() => {
-      navigate("/inspiration");
-    });
+    if (isCorrect) {
+      UpdateDesign(
+        design._id,
+        {
+          title,
+          text,
+          description,
+          mainImg,
+          art1Title,
+          art1Text,
+          art1Img,
+          art2Title,
+          art2Text,
+          art2Img,
+          likes: design.likes,
+          _ownerId: user._id,
+          _ownerName: user.email,
+          _id: design._id,
+        },
+        user.accessToken
+      ).then(() => {
+        navigate("/inspiration");
+      });
+    }
+  }
+
+  function FormErrorVal(e) {
+    const { name, value } = e.target;
+    switch (name) {
+      case "title":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            titleTxt: "Title is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, titleTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      case "mainImg":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            mainImgTxt: "Main Image is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, mainImgTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      case "text":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            textTxt: "Introduction Text is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, textTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      case "description":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            descTxt: "Description is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, descTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      default:
+        break;
+    }
   }
 
   return (
@@ -61,51 +126,77 @@ export default function DesignEdit() {
         <h2 className="designEdit-title">Edit your design</h2>
         <form className="designEdit-form" method="POST" onSubmit={onDesignEdit}>
           <section className="designEdit-form-row">
-            <article className="designEdit-form-title-ctn">
-              <label htmlFor="title">Title</label>
+            <article
+              className="designEdit-form-title-ctn"
+              id={errors.titleTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="title">
+                {errors.titleTxt ? errors.titleTxt : "Title"}
+              </label>
               <input
                 type="text"
                 name="title"
                 className="designEdit-form-title"
                 defaultValue={design.title}
+                onBlur={FormErrorVal}
               />
             </article>
 
-            <article className="designEdit-form-mainImg-ctn">
-              <label htmlFor="mainImg">Main Image</label>
+            <article
+              className="designEdit-form-mainImg-ctn"
+              id={errors.mainImgTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="mainImg">
+                {errors.mainImgTxt ? errors.mainImgTxt : "Main Image"}
+              </label>
               <input
                 type="text"
                 name="mainImg"
                 className="designEdit-form-mainImg"
                 defaultValue={design.mainImg}
+                onBlur={FormErrorVal}
               />
             </article>
           </section>
 
           <section className="designEdit-form-row">
-            <article className="designEdit-form-text-ctn">
-              <label htmlFor="text">Introduction Text</label>
+            <article
+              className="designEdit-form-text-ctn"
+              id={errors.textTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="text">
+                {errors.textTxt ? errors.textTxt : "Introduction Text"}
+              </label>
               <textarea
                 type="text"
                 name="text"
                 className="designEdit-form-text"
                 defaultValue={design.text}
+                onBlur={FormErrorVal}
               />
             </article>
 
-            <article className="designEdit-form-desc-ctn">
-              <label htmlFor="description">Main Description</label>
+            <article
+              className="designEdit-form-desc-ctn"
+              id={errors.descTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="description">
+                {errors.descTxt ? errors.descTxt : "Main Description"}
+              </label>
               <textarea
                 type="text"
                 name="description"
                 className="designEdit-form-desc"
                 defaultValue={design.description}
+                onBlur={FormErrorVal}
               />
             </article>
           </section>
 
           <section className="designEdit-form-row">
-            <h3 className="firstArticle-title">First Article Content (Optional)</h3>
+            <h3 className="firstArticle-title">
+              First Article Content (Optional)
+            </h3>
             <article className="designEdit-form-art1-title-ctn">
               <label htmlFor="art1-title">First Article Title</label>
               <input
@@ -138,7 +229,9 @@ export default function DesignEdit() {
           </section>
 
           <section className="designEdit-form-row">
-            <h3 className="secondArticle-title">Second Article Content (Optional)</h3>
+            <h3 className="secondArticle-title">
+              Second Article Content (Optional)
+            </h3>
             <article className="designEdit-form-art2-title-ctn">
               <label htmlFor="art2-title">Second Article Title</label>
               <input

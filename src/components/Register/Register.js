@@ -56,7 +56,7 @@ export default function Register() {
     setShowError(false);
   };
 
-  function formValChange(e) {
+  function FormErrorVal(e) {
     const { name, value } = e.target;
     let emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gm;
 
@@ -107,7 +107,7 @@ export default function Register() {
               name="email"
               id="register-form-email"
               placeholder="Email Address"
-              onBlur={formValChange}
+              onBlur={FormErrorVal}
             />
             <p className={errors.emailTxt ? "error" : "hidden"}>
               {errors.emailTxt}
@@ -121,7 +121,7 @@ export default function Register() {
               name="password"
               id="register-form-password"
               placeholder="Password"
-              onBlur={formValChange}
+              onBlur={FormErrorVal}
             />
             <p className={errors.passTxt ? "error" : "hidden"}>
               {errors.passTxt}
@@ -135,7 +135,7 @@ export default function Register() {
               name="rePassword"
               id="register-form-rePassword"
               placeholder="Repeat Password"
-              onBlur={formValChange}
+              onBlur={FormErrorVal}
             />
             <p className={errors.rePassTxt ? "error" : "hidden"}>
               {errors.rePassTxt}

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 
 import "./DesignCreation.css";
@@ -7,6 +7,13 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { CreateDesign } from "../../services/designService";
 
 export default function DesignCreation() {
+  const [errors, setErrors] = useState({
+    titleTxt: null,
+    textTxt: null,
+    mainImgTxt: null,
+    descTxt: null,
+  });
+  const [isCorrect, setIsCorrect] = useState(true);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -24,26 +31,84 @@ export default function DesignCreation() {
     let art2Title = formData.get("art2-title");
     let art2Text = formData.get("art2-text");
     let art2Img = formData.get("art2-img");
+    console.log(isCorrect);
+    if (isCorrect) {
+      CreateDesign(
+        {
+          title,
+          text,
+          description,
+          mainImg,
+          art1Title,
+          art1Text,
+          art1Img,
+          art2Title,
+          art2Text,
+          art2Img,
+          _ownerId: user._id,
+          _ownerName: user.email,
+        },
+        user.accessToken
+      ).then(() => {
+        return navigate("/inspiration");
+      });
+    }
+  }
 
-    CreateDesign(
-      {
-        title,
-        text,
-        description,
-        mainImg,
-        art1Title,
-        art1Text,
-        art1Img,
-        art2Title,
-        art2Text,
-        art2Img,
-        _ownerId: user._id,
-        _ownerName: user.email,
-      },
-      user.accessToken
-    ).then(() => {
-      return navigate("/inspiration");
-    });
+  function FormErrorVal(e) {
+    const { name, value } = e.target;
+    switch (name) {
+      case "title":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            titleTxt: "Title is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, titleTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      case "mainImg":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            mainImgTxt: "Main Image is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, mainImgTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      case "text":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            textTxt: "Introduction Text is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, textTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      case "description":
+        if (!value) {
+          setErrors((state) => ({
+            ...state,
+            descTxt: "Description is required",
+          }));
+          setIsCorrect(false);
+        } else {
+          setErrors((state) => ({ ...state, descTxt: false }));
+          setIsCorrect(true);
+        }
+        break;
+      default:
+        break;
+    }
   }
 
   return (
@@ -56,51 +121,77 @@ export default function DesignCreation() {
           method="POST"
         >
           <section className="designCreation-form-row">
-            <article className="designCreation-form-title-ctn">
-              <label htmlFor="title">Title</label>
+            <article
+              className="designCreation-form-title-ctn"
+              id={errors.titleTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="title">
+                {errors.titleTxt ? errors.titleTxt : "Title"}
+              </label>
               <input
                 type="text"
                 name="title"
                 className="designCreation-form-title"
                 placeholder="Color theory"
+                onBlur={FormErrorVal}
               />
             </article>
 
-            <article className="designCreation-form-mainImg-ctn">
-              <label htmlFor="mainImg">Main Image</label>
+            <article
+              className="designCreation-form-mainImg-ctn"
+              id={errors.mainImgTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="mainImg">
+                {errors.mainImgTxt ? errors.mainImgTxt : "Main Image"}
+              </label>
               <input
                 type="text"
                 name="mainImg"
                 className="designCreation-form-mainImg"
                 placeholder="https://image.png"
+                onBlur={FormErrorVal}
               />
             </article>
           </section>
 
           <section className="designCreation-form-row">
-            <article className="designCreation-form-text-ctn">
-              <label htmlFor="text">Introduction Text</label>
+            <article
+              className="designCreation-form-text-ctn"
+              id={errors.textTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="text">
+                {errors.textTxt ? errors.textTxt : "Introduction Text"}
+              </label>
               <textarea
                 type="text"
                 name="text"
                 className="designCreation-form-text"
                 placeholder="The importance of color theory and choosing colors"
+                onBlur={FormErrorVal}
               />
             </article>
 
-            <article className="designCreation-form-desc-ctn">
-              <label htmlFor="description">Main Description</label>
+            <article
+              className="designCreation-form-desc-ctn"
+              id={errors.descTxt ? "wrongInput" : "correctInput"}
+            >
+              <label htmlFor="description">
+                {errors.descTxt ? errors.descTxt : "Main Description"}
+              </label>
               <textarea
                 type="text"
                 name="description"
                 className="designCreation-form-desc"
                 placeholder="Color theory is important because of its influence on design"
+                onBlur={FormErrorVal}
               />
             </article>
           </section>
 
           <section className="designCreation-form-row">
-            <h3 className="firstArticle-title">First Article Content (Optional)</h3>
+            <h3 className="firstArticle-title">
+              First Article Content (Optional)
+            </h3>
             <article className="designCreation-form-art1-title-ctn">
               <label htmlFor="art1-title">First Article Title</label>
               <input
@@ -111,7 +202,6 @@ export default function DesignCreation() {
               />
             </article>
 
-            
             <article className="designCreation-form-art1-img-ctn">
               <label htmlFor="art1-img">First Article Image</label>
               <input
@@ -131,11 +221,12 @@ export default function DesignCreation() {
                 placeholder="Different colors mean different emotions"
               />
             </article>
-
           </section>
 
           <section className="designCreation-form-row">
-            <h3 className="secondArticle-title">Second Article Content (Optional)</h3>
+            <h3 className="secondArticle-title">
+              Second Article Content (Optional)
+            </h3>
             <article className="designCreation-form-art2-title-ctn">
               <label htmlFor="art2-title">Second Article Title</label>
               <input

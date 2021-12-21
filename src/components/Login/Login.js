@@ -38,7 +38,7 @@ export default function Login() {
     setShowError(false);
   };
 
-  function formValChange(e) {
+  function formErrorVal(e) {
     const { name, value } = e.target;
     let emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gm;
 
@@ -52,7 +52,7 @@ export default function Login() {
             }));
         break;
       case "password":
-        value.length < 3
+        !value
           ? setErrors((state) => ({
               ...state,
               passTxt: "Password is required",
@@ -79,7 +79,7 @@ export default function Login() {
               name="email"
               className="login-form-email"
               placeholder="Email Address"
-              onBlur={formValChange}
+              onBlur={formErrorVal}
               id={errors.emailTxt ? "redInput" : "normalInput"}
             />
             <p className={errors.emailTxt ? "error" : "hidden"}>
@@ -93,7 +93,7 @@ export default function Login() {
               name="password"
               className="login-form-password"
               placeholder="Password"
-              onBlur={formValChange}
+              onBlur={formErrorVal}
               id={errors.passTxt ? "redInput" : "normalInput"}
             />
             <label htmlFor="password">
