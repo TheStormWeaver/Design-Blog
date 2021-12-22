@@ -80,10 +80,11 @@ export default function DesignEdit() {
         }
         break;
       case "mainImg":
-        if (!value) {
+        let imgRegex = /^https?:\/\/.*\/.*\.(png|gif|webp|jpeg|jpg)\??.*$/gim;
+        if (!imgRegex.test(value)) {
           setErrors((state) => ({
             ...state,
-            mainImgTxt: "Main Image is required",
+            mainImgTxt: "Main Image URL is invalid",
           }));
           setIsCorrect(false);
         } else {
@@ -92,10 +93,10 @@ export default function DesignEdit() {
         }
         break;
       case "text":
-        if (!value) {
+        if (value.length < 5) {
           setErrors((state) => ({
             ...state,
-            textTxt: "Introduction Text is required",
+            textTxt: "Introduction Text must be at least 5 characters long",
           }));
           setIsCorrect(false);
         } else {
@@ -104,10 +105,10 @@ export default function DesignEdit() {
         }
         break;
       case "description":
-        if (!value) {
+        if (value.length < 10) {
           setErrors((state) => ({
             ...state,
-            descTxt: "Description is required",
+            descTxt: "Description must be at least 10 characters long",
           }));
           setIsCorrect(false);
         } else {

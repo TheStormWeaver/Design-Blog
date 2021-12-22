@@ -123,3 +123,7 @@
   color: cyan;
   text-decoration: none;
 }
+
+.register-form input:-webkit-autofill {
+  -webkit-text-fill-color: white;
+}

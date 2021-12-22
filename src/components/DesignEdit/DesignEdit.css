@@ -107,3 +107,7 @@
 #designEdit-form-submitBtn-ctn {
   border-bottom: none;
 }
+
+.designEdit-form input:-webkit-autofill {
+  -webkit-text-fill-color: white;
+}
