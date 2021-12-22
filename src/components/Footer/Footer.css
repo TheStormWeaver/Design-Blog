@@ -1,8 +1,15 @@
 .site-footer {
   text-align: center;
   padding: 10px;
-  background: linear-gradient(90deg, rgba(12,34,83,1) 0%, rgba(73,70,130,1) 50%, rgba(5,9,44,1) 100%);
-  margin-top:auto; 
+  background: rgb(4, 29, 120);
+  background: linear-gradient(
+    45deg,
+    rgba(4, 29, 120, 1) 0%,
+    rgba(31, 5, 138, 1) 33%,
+    rgba(69, 9, 161, 1) 66%,
+    rgba(48, 0, 80, 1) 100%
+  );
+  margin-top: auto;
   color: white;
 }
 

@@ -61,21 +61,17 @@
   border: 2px solid #611ace;
 }
 
-.designDetails-content-buttons-like:hover {
-  background-color: #c60fe7;
-}
-
 .designDetails-content-likes-total {
   color: #611ace;
 }
 
 .designDetails-content-buttons-edit {
-  background-color: #1a2a5e;
+  background-color: #0b177c;
   margin-right: 26px;
 }
 
 .designDetails-content-buttons-delete {
-  background-color: #494682;
+  background-color: #320158;
 }
 
 .designDetails-content-buttons-edit,
@@ -86,10 +82,18 @@
   border-radius: 10px;
 }
 
-.designDetails-content-buttons-edit:hover,
-.designDetails-content-buttons-delete:hover {
-  background-color: #15085e;
+.designDetails-content-buttons-edit:hover {
+  background-color: #0e1ea7;
   color: white;
+}
+
+.designDetails-content-buttons-delete:hover {
+  background-color: #540094;
+  color: white;
+}
+
+.designDetails-content-buttons-like:hover {
+  background-color: #c60fe7;
 }
 
 #hidden {

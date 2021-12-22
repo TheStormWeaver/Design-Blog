@@ -1,1 +1,23 @@
-/* */
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+
+.modal-footer {
+  background-color: #ecf0f1;
+}
+
+.btn-secondary {
+  background-color: #afc1c6;
+  border: 1px solid #afc1c6;
+}
+
+.btn-primary {
+  background-color: #611ace;
+  border: 1px solid #611ace;
+  margin-left: 8px;
+}
