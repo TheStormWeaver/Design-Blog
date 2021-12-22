@@ -1,17 +1,15 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../contexts/AuthContext";
-import * as authService from "../../services/authService";
-
-import ErrorModal from "../Common/ErrorModal";
-
 import "./Login.css";
+
+import { AuthContext } from "../../contexts/AuthContext";
+import { NotificationContext } from '../../contexts/NotificationContext';
+import * as authService from "../../services/authService";
 
 export default function Login() {
   const [errors, setErrors] = useState({ emailTxt: null, passTxt: null });
-  const [showError, setShowError] = useState(false);
-  const [text, setText] = useState("");
+  const { addNotification } = useContext(NotificationContext);
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -25,18 +23,13 @@ export default function Login() {
 
     authService.Login(email, password).then((data) => {
       if (data == "403") {
-        setText("Username or password don't match");
-        setShowError(true);
+        addNotification("Username or password don't match")
       } else {
         loginUser(data);
         navigate("/");
       }
     });
   }
-
-  const onClose = () => {
-    setShowError(false);
-  };
 
   function formErrorVal(e) {
     const { name, value } = e.target;
@@ -66,8 +59,6 @@ export default function Login() {
 
   return (
     <section className="login-card-container">
-      <ErrorModal show={showError} onClose={onClose} message={text} />
-
       <article className="login-card">
         <h2 className="login-title">Login</h2>
 

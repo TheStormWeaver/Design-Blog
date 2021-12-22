@@ -1,0 +1,15 @@
+.notification {
+  position: fixed;
+  bottom: 850px;
+  right: 30px;
+}
+
+.toast-header {
+  background-color: #611ace;
+  color: white;
+  font-size: 18px;
+}
+
+.toast-body {
+  font-size: 16px;
+}

@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../contexts/AuthContext";
-import * as authService from "../../services/authService";
-
-import ErrorModal from "../Common/ErrorModal";
-
 import "./Register.css";
+
+import { AuthContext } from "../../contexts/AuthContext";
+import { NotificationContext } from "../../contexts/NotificationContext";
+import * as authService from "../../services/authService";
 
 export default function Register() {
   const [errors, setErrors] = useState({
@@ -14,9 +13,8 @@ export default function Register() {
     passTxt: null,
     rePassTxt: null,
   });
-  const [showError, setShowError] = useState(false);
   const [isCorrect, setIsCorrect] = useState(true);
-  const [text, setText] = useState("");
+  const { addNotification } = useContext(NotificationContext);
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -40,8 +38,7 @@ export default function Register() {
     if (isCorrect) {
       authService.Register(email, password).then((data) => {
         if (data == "409") {
-          setText("User already exists");
-          setShowError(true);
+          addNotification("User already exists");
         } else if (data == "400") {
           throw data;
         } else {
@@ -51,10 +48,6 @@ export default function Register() {
       });
     }
   }
-
-  const onClose = () => {
-    setShowError(false);
-  };
 
   function FormErrorVal(e) {
     const { name, value } = e.target;
@@ -74,10 +67,10 @@ export default function Register() {
         }
         break;
       case "password":
-        !value
+        value.length < 3
           ? setErrors((state) => ({
               ...state,
-              passTxt: "Password is required",
+              passTxt: "Must be at least 3 characters",
             }))
           : setErrors((state) => ({ ...state, passTxt: false }));
         break;
@@ -96,7 +89,6 @@ export default function Register() {
 
   return (
     <section id="register-card-container">
-      <ErrorModal show={showError} onClose={onClose} message={text} />
       <article className="register-card">
         <form className="register-form" onSubmit={onRegister} method="POST">
           <h2 className="register-form-title">Register</h2>

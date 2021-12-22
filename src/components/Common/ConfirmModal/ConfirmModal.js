@@ -1,7 +1,8 @@
 import { Modal, Button } from "react-bootstrap";
+import "./ConfirmModal.css"
 
 export default function ConfirmModal({ show, onClose, onSave, message }) {
-  if (message != "Are you sure you want to delete this design?") {
+  if (message != "This design will be permanently deleted. Are you sure you want to delete the current design?") {
     onSave = "";
   }
 

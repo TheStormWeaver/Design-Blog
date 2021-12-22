@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { AuthProvider } from "./contexts/AuthContext";
+import { NotificationProvider } from "./contexts/NotificationContext";
 import AuthGuard from "./components/Common/AuthGuard";
 import UnAuthGuard from "./components/Common/UnAuthGuard";
 
@@ -19,37 +20,45 @@ import ProfileEdit from "./components/Profile/ProfileEdit/ProfileEdit.js";
 import DesignCreation from "./components/DesignCreation/DesignCreation";
 import DesignEdit from "./components/DesignEdit/DesignEdit";
 import DesignDetails from "./components/DesignDetails/DesignDetails";
+import Notification from "./components/Common/Notification/Notification";
 import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
     <AuthProvider>
-      <div className="App">
-        <Header />
+      <NotificationProvider>
+        <div className="App">
+          <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/inspiration" element={<Inspiration />}></Route>
-          <Route path="/details/:designId" element={<DesignDetails />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
+          <Notification />
 
-          <Route element={<UnAuthGuard />}>
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-          </Route>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/inspiration" element={<Inspiration />}></Route>
+            <Route
+              path="/details/:designId"
+              element={<DesignDetails />}
+            ></Route>
+            <Route path="*" element={<NotFound />}></Route>
 
-          <Route element={<AuthGuard />}>
-            <Route path="/profile" element={<Profile />}></Route>
-            <Route path="/profile-edit" element={<ProfileEdit />}></Route>
-            <Route path="/logout" element={<Logout />}></Route>
-            <Route path="/create" element={<DesignCreation />}></Route>
-            <Route path="/edit/:designId" element={<DesignEdit />}></Route>
-          </Route>
-        </Routes>
+            <Route element={<UnAuthGuard />}>
+              <Route path="/register" element={<Register />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+            </Route>
 
-        <Footer />
-      </div>
+            <Route element={<AuthGuard />}>
+              <Route path="/profile" element={<Profile />}></Route>
+              <Route path="/profile-edit" element={<ProfileEdit />}></Route>
+              <Route path="/logout" element={<Logout />}></Route>
+              <Route path="/create" element={<DesignCreation />}></Route>
+              <Route path="/edit/:designId" element={<DesignEdit />}></Route>
+            </Route>
+          </Routes>
+
+          <Footer />
+        </div>
+      </NotificationProvider>
     </AuthProvider>
   );
 }

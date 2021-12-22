@@ -2,9 +2,10 @@ import { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import "./DesignDetails.css";
-import ConfirmModal from "../Common/ConfirmModal";
+import ConfirmModal from "../Common/ConfirmModal/ConfirmModal";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { NotificationContext } from '../../contexts/NotificationContext';
 import { DelDesign, getOneDesign, Like } from "../../services/designService";
 
 export default function DesignDetails() {
@@ -12,6 +13,7 @@ export default function DesignDetails() {
   const [design, setDesign] = useState({});
   const [ text, setText ] = useState("");
   const { user } = useContext(AuthContext);
+  const { addNotification } = useContext(NotificationContext);
   const { designId } = useParams();
   const navigate = useNavigate();
 
@@ -21,8 +23,7 @@ export default function DesignDetails() {
 
   const likeButtonClick = () => {
     if (design.likes.includes(user._id)) {
-      setText("User already liked");
-      setShowDialogue(true)
+      addNotification("You cannot like this design again")
       return;
     }
 
@@ -50,7 +51,7 @@ export default function DesignDetails() {
   const deleteClickHandler = (e) => {
     e.preventDefault();
 
-    setText("Are you sure you want to delete this design?");
+    setText("This design will be permanently deleted. Are you sure you want to delete the current design?");
     setShowDialogue(true);
   };
 

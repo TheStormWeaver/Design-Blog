@@ -44,7 +44,7 @@
 }
 
 .designDetails-content-buttons-like {
-  background: black;
+  background: #611ace;
   color: white;
   border: none;
   border-radius: 6px;
@@ -55,7 +55,21 @@
   padding-right: 10px;
 }
 
-.designDetails-content-buttons-edit{
+.designDetails-content-likes-total {
+  padding: 0 24px;
+  border-radius: 12px;
+  border: 2px solid #611ace;
+}
+
+.designDetails-content-buttons-like:hover {
+  background-color: #c60fe7;
+}
+
+.designDetails-content-likes-total {
+  color: #611ace;
+}
+
+.designDetails-content-buttons-edit {
   background-color: #1a2a5e;
   margin-right: 26px;
 }
