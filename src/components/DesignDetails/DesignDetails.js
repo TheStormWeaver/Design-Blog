@@ -8,12 +8,12 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { DelDesign, getOneDesign, Like } from "../../services/designService";
 
 export default function DesignDetails() {
-  const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
-  const [design, setDesign] = useState({});
-  const { designId } = useParams();
-  const [ text, setText ] = useState("");
   const [showDialogue, setShowDialogue] = useState(false);
+  const [design, setDesign] = useState({});
+  const [ text, setText ] = useState("");
+  const { user } = useContext(AuthContext);
+  const { designId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getOneDesign(designId).then((result) => setDesign(result));
@@ -29,7 +29,7 @@ export default function DesignDetails() {
     let likes = [...design.likes, user._id];
     let likedDesign = { ...design, likes };
 
-    Like(design._id, likedDesign, user.accessToken).then((resData) => {
+    Like(design._id, likedDesign, user.accessToken).then(() => {
       setDesign((state) => ({
         ...state,
         likes,

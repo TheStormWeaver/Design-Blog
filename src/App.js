@@ -2,8 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { AuthContext } from "./contexts/AuthContext";
-import useLocalStorage from "./hooks/useLocalStorage";
+import { AuthProvider } from "./contexts/AuthContext";
 import AuthGuard from "./components/Common/AuthGuard";
 import UnAuthGuard from "./components/Common/UnAuthGuard";
 
@@ -23,45 +22,14 @@ import DesignDetails from "./components/DesignDetails/DesignDetails";
 import NotFound from "./components/NotFound/NotFound";
 
 function App() {
-  const [user, setUser] = useLocalStorage("user", {
-    _id: "",
-    email: "",
-    accessToken: "",
-    photo: "",
-    displayName: "",
-    bio: "",
-  });
-
-  const loginUser = (authData) => {
-    setUser({ ...authData });
-  };
-
-  const updateProfileData = (profileData) => {
-    setUser({ ...user, ...profileData });
-  };
-
-  function logoutUser() {
-    setUser({
-      _id: "",
-      email: "",
-      accessToken: "",
-      photoUrl: "",
-      displayName: "",
-      bio: "",
-    });
-  }
-
   return (
-    <AuthContext.Provider
-      value={{ user, loginUser, logoutUser, updateProfileData }}
-    >
+    <AuthProvider>
       <div className="App">
         <Header />
 
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
-
           <Route path="/inspiration" element={<Inspiration />}></Route>
           <Route path="/details/:designId" element={<DesignDetails />}></Route>
           <Route path="*" element={<NotFound />}></Route>
@@ -82,7 +50,7 @@ function App() {
 
         <Footer />
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
