@@ -25,7 +25,7 @@ Design Blog  is an app that serves as an site that focuses on sharing inspiratio
 - Have the ability to edit designs that they have created
 - Have the ability to delete designs that they have created
 - Can like other people's designs
-- Can access their own profile page, in which they can edit their profile picture, display name and about me info
+- Can access their own profile page, in which they can edit their profile picture, display name and a short bio
 
 
 ## Running the project
