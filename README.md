@@ -26,7 +26,7 @@ Authorized (Logged in) users have access to:
 - Can access their own profile page, in which they can edit their profile picture, display name and about me info
 
 
-# Running the project
+## Running the project
 1. Clone this repo or save it as a zip
 2. Enter the directory of the project in a ide of choice & run "npm install"
 3. Enter the "server" folder, then run CMD in the "server" folder and type in the command "node server.js"
