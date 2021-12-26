@@ -10,7 +10,7 @@ Design Blog  is an app that serves as an site that focuses on sharing inspiratio
 **Note: the project requires the sofuni-practice-server (located in the "server" folder in this repo) to be running at all times for everything to be working correctly.**
 
 ## User Access and restrictions
-Unauthorized (not logged in) users have access to:
+*Unauthorized (not logged in) users have access to:*
 - Home page
 - About us page
 - Register page
@@ -18,7 +18,7 @@ Unauthorized (not logged in) users have access to:
 - Inspiration page
 - The details of a given design (in the inspiration page)
 
-Authorized (Logged in) users have access to:
+*Authorized (Logged in) users have access to:*
 - The above mentioned in the unothorized section (except for the register and login pages)
 - The logout page
 - Create design page, in which they can create designs
