@@ -1,5 +1,5 @@
 # Design-Blog
-Design Blog is a project created for the project defense of the React Softuni Course (November - December 2021) (https://softuni.bg/trainings/3575/reactjs-november-2021) as part of the Front-End (September - December 2021)
+Design Blog is a project created for the project defense of the React Softuni Course (November - December 2021) (https://softuni.bg/trainings/3575/reactjs-november-2021) as part of the Front-End Course (September - December 2021)
 
 Project requirements document: [ReactJS-Project-Assignment.docx](https://github.com/TheStormWeaver/Design-Blog/files/7687984/ReactJS-Project-Assignment.docx)
 
