@@ -16,8 +16,10 @@ Unauthorized (not logged in) users have access to:
 - Register page
 - Login page
 - Inspiration page
+- The details of a given design (in the inspiration page)
 
 Authorized (Logged in) users have access to:
+- The above mentioned in the unothorized section (except for the register and login pages)
 - The logout page
 - Create design page, in which they can create designs
 - Have the ability to edit designs that they have created
